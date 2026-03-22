@@ -25,7 +25,7 @@
           "settings": {
             "collection": "boyam",
             "tag": "Ghorer jars",
-            "copy": "Pickles, chutneys, and homemade comfort are framed like an editorial pantry instead of a dense catalog."
+            "copy": "Pickles, chutneys, and homemade comfort from recipes that feel close to home."
           }
         },
         "collection_card_grocery": {
@@ -33,7 +33,7 @@
           "settings": {
             "collection": "grocery",
             "tag": "Pantry reset",
-            "copy": "Rice, spices, dal, and everyday essentials sit in a more premium, easier-to-scan collection rhythm."
+            "copy": "Rice, spices, dal, and everyday essentials for the Bengali kitchen."
           }
         },
         "collection_card_snacks": {
@@ -41,7 +41,7 @@
           "settings": {
             "collection": "snacks",
             "tag": "Cha-time crunch",
-            "copy": "Mukhorochak favorites and Kolkata-style munchies get a cleaner storefront with the same familiar warmth."
+            "copy": "Mukhorochak favorites and Kolkata-style munchies for cha-time cravings."
           }
         },
         "collection_card_tea": {
@@ -57,7 +57,7 @@
           "settings": {
             "collection": "vegetables",
             "tag": "Fresh market",
-            "copy": "A fresher-looking corner for produce and kitchen staples that deserve more breathing room."
+            "copy": "Fresh produce and kitchen staples chosen for familiar everyday cooking."
           }
         },
         "spotlight_product_moa": {
@@ -65,7 +65,8 @@
           "settings": {
             "product": "joynagarer-moa-12-pieces",
             "kicker": "Winter favorite",
-            "copy": "One of the most instantly nostalgic seasonal finds on the store, now positioned like a true signature highlight."
+            "bangla_name": "জয়নগরের মোয়া",
+            "copy": "A winter favorite that brings the sweetness of Bengal into every festive bite."
           }
         },
         "spotlight_product_gur": {
@@ -73,7 +74,8 @@
           "settings": {
             "product": "patali-gur-khejurer-gur",
             "kicker": "Pantry icon",
-            "copy": "A Bengali kitchen essential that anchors the homepage with warmth, depth, and a more premium visual pause."
+            "bangla_name": "পাটালি গুড়",
+            "copy": "A beloved kitchen essential with depth, warmth, and unmistakable Bengali character."
           }
         },
         "spotlight_product_nahoums": {
@@ -81,7 +83,8 @@
           "settings": {
             "product": "nahoums-special-christmas-fruit-cake",
             "kicker": "Kolkata legend",
-            "copy": "An instantly recognizable classic that helps the homepage feel more curated and less carousel-heavy."
+            "bangla_name": "নাহৌমস ফ্রুট কেক",
+            "copy": "A Kolkata classic that brings bakery nostalgia to gifting and family gatherings."
           }
         },
         "spotlight_product_rice": {
@@ -89,28 +92,29 @@
           "settings": {
             "product": "gobindobhog-rice",
             "kicker": "Everyday essential",
+            "bangla_name": "গোবিন্দভোগ চাল",
             "copy": "A pantry staple with emotional pull, positioned here to balance the sweets and snack-heavy nostalgia."
           }
         },
         "trust_note_palette": {
           "type": "trust_note",
           "settings": {
-            "title": "Same palette, sharper finish",
-            "text": "The maroon, cream, and saffron story stays intact, but the homepage now breathes and feels more premium."
+            "title": "Trusted Bengali staples",
+            "text": "The familiar maroon, cream, and saffron tone still carries the warmth of Bangla Konnection."
           }
         },
         "trust_note_culture": {
           "type": "trust_note",
           "settings": {
-            "title": "Bengali cues without clutter",
-            "text": "The cultural hint comes through in the storytelling, warmth, and ornamental rhythm rather than heavy decoration."
+            "title": "Culture in the details",
+            "text": "The Bengali touch comes through in the flavors, storytelling, and sense of home."
           }
         },
         "trust_note_shopping": {
           "type": "trust_note",
           "settings": {
-            "title": "Designed for modern shopping",
-            "text": "Collections, spotlights, and trust signals are easier to scan on mobile, making the landing page feel cleaner and faster."
+            "title": "Easy to explore",
+            "text": "Collections, highlights, and trusted picks are laid out to feel simple and welcoming on any screen."
           }
         }
       },
@@ -131,29 +135,28 @@
       ],
       "settings": {
         "color_scheme": "scheme-1",
-        "eyebrow": "Ghorer shad, redesigned",
-        "heading": "A sleeker Bangla homepage with the warmth still intact.",
-        "text": "<p>Bangla Konnection now opens with more breathing room, clearer pathways, and a softer editorial feel, while the familiar maroon, cream, and saffron palette still carries the identity.</p>",
+        "eyebrow": "Banglar shad, ghorer moto",
+        "heading": "Authentic Bengali favorites, thoughtfully brought together.",
+        "text": "<p>From sweets and snacks to pantry staples and seasonal comforts, discover Bengal's most loved flavors in one warm and easy-to-browse destination.</p>",
         "primary_button_label": "Explore collections",
         "primary_button_link": "shopify://collections",
         "secondary_button_label": "Start with sweets",
         "secondary_button_link": "shopify://collections/authentic-bengali-sweets-treats-online",
         "hero_image": "",
-        "hero_collection": "authentic-bengali-sweets-treats-online",
-        "hero_card_badge": "Editor-picked",
+        "hero_collection": "boyam",
         "hero_card_title": "Taste that feels like home",
         "hero_card_text": "A gentler, more premium first impression built around sweets, pantry staples, and Kolkata favorites.",
         "hero_card_link_label": "Browse the edit",
-        "hero_card_link": "shopify://collections/authentic-bengali-sweets-treats-online",
+        "hero_card_link": "shopify://collections/boyam",
         "stat_1_value": "6+ aisles",
         "stat_1_label": "Mishti, pantry, snacks, tea, vegetables, and more",
         "stat_2_value": "Pan-India",
         "stat_2_label": "A homepage flow designed around modern delivery behavior",
         "stat_3_value": "Authentic",
         "stat_3_label": "Beloved brands, classics, and Bengal-first pantry staples",
-        "story_heading": "A cleaner homepage, still rooted in Bengal.",
-        "story_text": "<p>The redesign keeps the same emotional color story but swaps the crowded homepage stack for a more composed editorial flow. It feels more contemporary, more premium, and still unmistakably Bangla Konnection.</p>",
-        "story_quote": "Ghorer shad, with a sleeker city rhythm.",
+        "story_heading": "Rooted in Bengal, made for everyday cravings.",
+        "story_text": "<p>Every corner of the homepage celebrates familiar flavors, trusted brands, and household essentials, with a browsing experience that feels warm, calm, and easy to explore.</p>",
+        "story_quote": "Mishti, moshla, aar onek kichhu.",
         "padding_top": 36,
         "padding_bottom": 56
       }
@@ -282,8 +285,8 @@
         "image_width": 84
       }
     },
-    "multicolumn_3pQyWK": {
-      "type": "multicolumn",
+    "bk_home_testimonials_Ak7LmQ": {
+      "type": "bk-home-testimonials",
       "blocks": {
         "column_gtUXTw": {
           "type": "column",
@@ -378,7 +381,12 @@
       ],
       "custom_css": [],
       "settings": {
+        "eyebrow": "From probashi homes",
         "title": "What customers are saying",
+        "intro_text": "<p>Real notes from customers who come to Bangla Konnection for pantry restocks, nostalgic treats, and the comfort of familiar Bengali flavors.</p>",
+        "stat_1": "5-star reviews",
+        "stat_2": "Packed with care",
+        "stat_3": "Pantry to mishti",
         "heading_size": "h1",
         "image_width": "half",
         "image_ratio": "circle",
@@ -399,6 +407,6 @@
     "bk_home_revamp_TNw3fP",
     "ss_text_block_Pg8tfR",
     "marquee_images_JpgNAj",
-    "multicolumn_3pQyWK"
+    "bk_home_testimonials_Ak7LmQ"
   ]
 }

@@ -1,0 +1,649 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  .bk-home-testimonials-{{ section.id }} {
+    position: relative;
+    overflow: hidden;
+    background:
+      radial-gradient(circle at 15% 18%, rgba(227, 158, 96, 0.18), transparent 24%),
+      radial-gradient(circle at 85% 0%, rgba(185, 21, 21, 0.08), transparent 26%),
+      linear-gradient(180deg, #fff9ef 0%, #fffcec 48%, #f4eedf 100%);
+  }
+
+  .bk-home-testimonials-{{ section.id }}::before,
+  .bk-home-testimonials-{{ section.id }}::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    opacity: 0.32;
+  }
+
+  .bk-home-testimonials-{{ section.id }}::before {
+    top: -8rem;
+    right: -7rem;
+    width: 24rem;
+    height: 24rem;
+    background:
+      radial-gradient(circle, rgba(61, 8, 27, 0.12) 0 0.2rem, transparent 0.22rem),
+      radial-gradient(circle, rgba(185, 21, 21, 0.12) 0 0.2rem, transparent 0.22rem);
+    background-size: 1.6rem 1.6rem, 3.2rem 3.2rem;
+  }
+
+  .bk-home-testimonials-{{ section.id }}::after {
+    bottom: -10rem;
+    left: -8rem;
+    width: 22rem;
+    height: 22rem;
+    background: radial-gradient(circle, rgba(227, 158, 96, 0.3), rgba(227, 158, 96, 0));
+  }
+
+  .bk-home-testimonials__shell-{{ section.id }} {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    gap: 2.4rem;
+  }
+
+  .bk-home-testimonials__header-{{ section.id }} {
+    display: grid;
+    gap: 1.4rem;
+  }
+
+  .bk-home-testimonials__eyebrow-{{ section.id }} {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7rem;
+    width: fit-content;
+    margin: 0;
+    padding: 0.72rem 1.2rem;
+    border: 1px solid rgba(61, 8, 27, 0.14);
+    border-radius: 999px;
+    background: rgba(255, 252, 236, 0.84);
+    color: #8f1d20;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.18rem;
+    text-transform: uppercase;
+  }
+
+  .bk-home-testimonials__eyebrow-{{ section.id }}::before {
+    content: '';
+    width: 0.55rem;
+    height: 0.55rem;
+    border-radius: 50%;
+    background: #b91515;
+    box-shadow: 0 0 0 0.22rem rgba(185, 21, 21, 0.12);
+  }
+
+  .bk-home-testimonials__topline-{{ section.id }} {
+    display: grid;
+    gap: 1.2rem;
+  }
+
+  .bk-home-testimonials__title-{{ section.id }} {
+    margin: 0;
+    max-width: 14ch;
+    color: #3d081b;
+    font-size: clamp(2.9rem, 5vw, 5rem);
+    line-height: 1.02;
+    letter-spacing: -0.04rem;
+  }
+
+  .bk-home-testimonials__intro-{{ section.id }} {
+    max-width: 54rem;
+    color: rgba(61, 8, 27, 0.78);
+    font-size: 1.55rem;
+    line-height: 1.75;
+  }
+
+  .bk-home-testimonials__intro-{{ section.id }} p {
+    margin: 0;
+  }
+
+  .bk-home-testimonials__stats-{{ section.id }} {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.9rem;
+  }
+
+  .bk-home-testimonials__stat-{{ section.id }} {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    padding: 0.8rem 1.05rem;
+    border: 1px solid rgba(61, 8, 27, 0.1);
+    border-radius: 999px;
+    background: rgba(255, 252, 236, 0.9);
+    color: #3d081b;
+    font-size: 1.15rem;
+    font-weight: 600;
+    box-shadow: 0 1rem 2.6rem rgba(61, 8, 27, 0.06);
+  }
+
+  .bk-home-testimonials__stat-{{ section.id }}::before {
+    content: '';
+    width: 0.45rem;
+    height: 0.45rem;
+    border-radius: 50%;
+    background: linear-gradient(180deg, #c55a2e, #8f1d20);
+  }
+
+  .bk-home-testimonials__grid-{{ section.id }} {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(84%, 1fr);
+    gap: 1.4rem;
+    overflow-x: auto;
+    padding-bottom: 0.4rem;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+
+  .bk-home-testimonials__grid-{{ section.id }}::-webkit-scrollbar {
+    display: none;
+  }
+
+  .bk-home-testimonials__card-{{ section.id }} {
+    position: relative;
+    isolation: isolate;
+    display: grid;
+    gap: 1.35rem;
+    min-height: 100%;
+    padding: 1.7rem;
+    border: 1px solid rgba(61, 8, 27, 0.12);
+    border-radius: 2.6rem;
+    background:
+      linear-gradient(180deg, rgba(255, 252, 236, 0.96), rgba(246, 238, 221, 0.96)),
+      #fffcec;
+    box-shadow: 0 2rem 4.4rem rgba(61, 8, 27, 0.08);
+    scroll-snap-align: start;
+    overflow: hidden;
+    transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+  }
+
+  .bk-home-testimonials__card-{{ section.id }}.is-featured {
+    background:
+      linear-gradient(135deg, rgba(61, 8, 27, 0.95), rgba(143, 29, 32, 0.88)),
+      #3d081b;
+    color: #fffcec;
+    border-color: rgba(255, 252, 236, 0.12);
+  }
+
+  .bk-home-testimonials__card-{{ section.id }}::before {
+    content: '';
+    position: absolute;
+    inset: 0 0 auto;
+    height: 0.36rem;
+    background: linear-gradient(90deg, #d46b3a, #8f1d20);
+  }
+
+  .bk-home-testimonials__card-{{ section.id }}::after {
+    content: '\201C';
+    position: absolute;
+    top: 1.2rem;
+    right: 1.5rem;
+    color: rgba(143, 29, 32, 0.08);
+    font-size: 8rem;
+    line-height: 1;
+    font-family: Georgia, 'Times New Roman', serif;
+    pointer-events: none;
+  }
+
+  .bk-home-testimonials__card-{{ section.id }}:hover {
+    transform: translateY(-0.4rem);
+    border-color: rgba(143, 29, 32, 0.2);
+    box-shadow: 0 2.4rem 5rem rgba(61, 8, 27, 0.12);
+  }
+
+  .bk-home-testimonials__card-{{ section.id }}.is-featured::before {
+    background: linear-gradient(90deg, #f9d483, #e39e60);
+  }
+
+  .bk-home-testimonials__card-{{ section.id }}.is-featured::after {
+    color: rgba(255, 252, 236, 0.08);
+  }
+
+  .bk-home-testimonials__card-media-{{ section.id }} {
+    overflow: hidden;
+    position: relative;
+    border-radius: 2rem;
+    background: #f2efdd;
+    aspect-ratio: 1.18 / 0.86;
+    box-shadow: inset 0 0 0 1px rgba(61, 8, 27, 0.08);
+  }
+
+  .bk-home-testimonials__card-{{ section.id }}.is-featured .bk-home-testimonials__card-media-{{ section.id }} {
+    aspect-ratio: 1.26 / 0.9;
+  }
+
+  .bk-home-testimonials__card-media-{{ section.id }} img,
+  .bk-home-testimonials__card-media-{{ section.id }} svg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.45s ease;
+  }
+
+  .bk-home-testimonials__card-{{ section.id }}:hover .bk-home-testimonials__card-media-{{ section.id }} img {
+    transform: scale(1.04);
+  }
+
+  .bk-home-testimonials__card-body-{{ section.id }} {
+    display: grid;
+    gap: 1rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .bk-home-testimonials__card-head-{{ section.id }} {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .bk-home-testimonials__label-{{ section.id }} {
+    display: inline-flex;
+    width: fit-content;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.55rem 0.85rem;
+    border: 1px solid rgba(143, 29, 32, 0.1);
+    border-radius: 999px;
+    background: rgba(255, 252, 236, 0.9);
+    color: #8f1d20;
+    font-size: 0.98rem;
+    font-weight: 700;
+    letter-spacing: 0.16rem;
+    text-transform: uppercase;
+  }
+
+  .bk-home-testimonials__label-{{ section.id }}::before {
+    content: '';
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background: #c55a2e;
+  }
+
+  .bk-home-testimonials__card-{{ section.id }}.is-featured .bk-home-testimonials__label-{{ section.id }} {
+    color: #f9d483;
+    border-color: rgba(249, 212, 131, 0.16);
+    background: rgba(255, 252, 236, 0.08);
+  }
+
+  .bk-home-testimonials__card-{{ section.id }}.is-featured .bk-home-testimonials__label-{{ section.id }}::before {
+    background: #f9d483;
+  }
+
+  .bk-home-testimonials__stars-{{ section.id }} {
+    display: inline-flex;
+    gap: 0.18rem;
+    color: #c55a2e;
+    font-size: 1.2rem;
+    line-height: 1;
+    padding: 0.55rem 0.8rem;
+    border-radius: 999px;
+    background: rgba(197, 90, 46, 0.08);
+  }
+
+  .bk-home-testimonials__card-{{ section.id }}.is-featured .bk-home-testimonials__stars-{{ section.id }} {
+    color: #f9d483;
+    background: rgba(249, 212, 131, 0.08);
+  }
+
+  .bk-home-testimonials__quote-{{ section.id }} {
+    margin: 0;
+    color: rgba(61, 8, 27, 0.8);
+    font-size: 1.56rem;
+    line-height: 1.82;
+  }
+
+  .bk-home-testimonials__card-{{ section.id }}.is-featured .bk-home-testimonials__quote-{{ section.id }} {
+    color: rgba(255, 252, 236, 0.88);
+  }
+
+  .bk-home-testimonials__quote-{{ section.id }} p {
+    margin: 0;
+  }
+
+  .bk-home-testimonials__author-{{ section.id }} {
+    display: grid;
+    gap: 0.25rem;
+    margin-top: auto;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(61, 8, 27, 0.08);
+  }
+
+  .bk-home-testimonials__author-name-{{ section.id }} {
+    font-size: 1.45rem;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  .bk-home-testimonials__author-note-{{ section.id }} {
+    color: rgba(61, 8, 27, 0.58);
+    font-size: 1.15rem;
+    line-height: 1.5;
+  }
+
+  .bk-home-testimonials__card-{{ section.id }}.is-featured .bk-home-testimonials__author-note-{{ section.id }} {
+    color: rgba(255, 252, 236, 0.68);
+  }
+
+  .bk-home-testimonials__card-{{ section.id }}.is-featured .bk-home-testimonials__author-{{ section.id }} {
+    border-top-color: rgba(255, 252, 236, 0.12);
+  }
+
+  .bk-home-testimonials__link-{{ section.id }} {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7rem;
+    width: fit-content;
+    color: inherit;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .bk-home-testimonials__link-{{ section.id }} .icon-arrow {
+    width: 1.3rem;
+    transition: transform 0.25s ease;
+  }
+
+  .bk-home-testimonials__link-{{ section.id }}:hover .icon-arrow {
+    transform: translateX(0.25rem);
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+
+    .bk-home-testimonials__topline-{{ section.id }} {
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+      align-items: end;
+    }
+
+    .bk-home-testimonials__grid-{{ section.id }} {
+      grid-auto-flow: row;
+      grid-auto-columns: initial;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      overflow: visible;
+    }
+
+    .bk-home-testimonials__card-{{ section.id }}.is-featured {
+      grid-column: span 2;
+      grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+      align-items: center;
+      gap: 1.6rem;
+      padding: 2rem;
+    }
+  }
+
+  @media screen and (min-width: 990px) {
+    .bk-home-testimonials__grid-{{ section.id }} {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      align-items: stretch;
+    }
+
+    .bk-home-testimonials__card-{{ section.id }}.is-featured {
+      grid-column: span 2;
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .bk-home-testimonials__title-{{ section.id }} {
+      max-width: 100%;
+    }
+
+    .bk-home-testimonials__intro-{{ section.id }} {
+      font-size: 1.42rem;
+      line-height: 1.72;
+    }
+
+    .bk-home-testimonials__card-{{ section.id }} {
+      padding: 1.45rem;
+      border-radius: 2.2rem;
+    }
+
+    .bk-home-testimonials__card-head-{{ section.id }} {
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .bk-home-testimonials__quote-{{ section.id }} {
+      font-size: 1.46rem;
+      line-height: 1.76;
+    }
+  }
+{%- endstyle -%}
+
+<section class="bk-home-testimonials-{{ section.id }} color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
+  <div class="page-width bk-home-testimonials__shell-{{ section.id }}">
+    <div class="bk-home-testimonials__header-{{ section.id }}">
+      <span class="bk-home-testimonials__eyebrow-{{ section.id }}">
+        {%- if section.settings.eyebrow != blank -%}
+          {{ section.settings.eyebrow | escape }}
+        {%- else -%}
+          From our community
+        {%- endif -%}
+      </span>
+
+      <div class="bk-home-testimonials__topline-{{ section.id }}">
+        <h2 class="bk-home-testimonials__title-{{ section.id }}">
+          {%- if section.settings.title != blank -%}
+            {{ section.settings.title }}
+          {%- else -%}
+            What customers are saying
+          {%- endif -%}
+        </h2>
+
+        <div class="bk-home-testimonials__intro-{{ section.id }} rte">
+          {%- if section.settings.intro_text != blank -%}
+            {{ section.settings.intro_text }}
+          {%- else -%}
+            <p>From pantry staples to mishti cravings, these notes come from households that want familiar Bengali flavors delivered with care.</p>
+          {%- endif -%}
+        </div>
+      </div>
+
+      <div class="bk-home-testimonials__stats-{{ section.id }}">
+        <span class="bk-home-testimonials__stat-{{ section.id }}">
+          {{ section.settings.stat_1 | default: '5-star warmth' | escape }}
+        </span>
+        <span class="bk-home-testimonials__stat-{{ section.id }}">
+          {{ section.settings.stat_2 | default: 'Packed with care' | escape }}
+        </span>
+        <span class="bk-home-testimonials__stat-{{ section.id }}">
+          {{ section.settings.stat_3 | default: 'Trusted Bengali staples' | escape }}
+        </span>
+      </div>
+    </div>
+
+    <div class="bk-home-testimonials__grid-{{ section.id }}">
+      {%- for block in section.blocks -%}
+        {%- assign review_text = block.settings.text
+          | replace: '&#9733;&#9733;&#9733;&#9733;&#9733;<br/>', ''
+          | replace: '&#9733;&#9733;&#9733;&#9733;&#9733;', ''
+        -%}
+        <article class="bk-home-testimonials__card-{{ section.id }}{% if forloop.first %} is-featured{% endif %}" {{ block.shopify_attributes }}>
+          {%- if block.settings.image != blank -%}
+            <div class="bk-home-testimonials__card-media-{{ section.id }}">
+              {{
+                block.settings.image
+                | image_url: width: 900
+                | image_tag:
+                  widths: '320, 480, 720, 900',
+                  sizes: '(min-width: 990px) 22vw, (min-width: 750px) 44vw, 84vw',
+                  alt: block.settings.title
+              }}
+            </div>
+          {%- endif -%}
+
+          <div class="bk-home-testimonials__card-body-{{ section.id }}">
+            <div class="bk-home-testimonials__card-head-{{ section.id }}">
+              <span class="bk-home-testimonials__label-{{ section.id }}">
+                {%- if forloop.first -%}
+                  Community favorite
+                {%- else -%}
+                  Real customer note
+                {%- endif -%}
+              </span>
+
+              <div class="bk-home-testimonials__stars-{{ section.id }}" aria-label="Five-star review">
+                <span aria-hidden="true">&#9733;</span>
+                <span aria-hidden="true">&#9733;</span>
+                <span aria-hidden="true">&#9733;</span>
+                <span aria-hidden="true">&#9733;</span>
+                <span aria-hidden="true">&#9733;</span>
+              </div>
+            </div>
+
+            <div class="bk-home-testimonials__quote-{{ section.id }} rte">{{ review_text }}</div>
+
+            <div class="bk-home-testimonials__author-{{ section.id }}">
+              <span class="bk-home-testimonials__author-name-{{ section.id }}">{{ block.settings.title | escape }}</span>
+              <span class="bk-home-testimonials__author-note-{{ section.id }}">
+                {%- if forloop.first -%}
+                  Returning Bangla Konnection customer
+                {%- else -%}
+                  Shared after a recent order
+                {%- endif -%}
+              </span>
+            </div>
+
+            {%- if block.settings.link_label != blank and block.settings.link != blank -%}
+              <a href="{{ block.settings.link }}" class="bk-home-testimonials__link-{{ section.id }}">
+                {{ block.settings.link_label | escape }}
+                {% render 'icon-arrow' %}
+              </a>
+            {%- endif -%}
+          </div>
+        </article>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "BK Home Testimonials",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "From our community"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "title",
+      "label": "Heading",
+      "default": "What customers are saying"
+    },
+    {
+      "type": "richtext",
+      "id": "intro_text",
+      "label": "Intro text",
+      "default": "<p>From pantry staples to mishti cravings, these notes come from households that want familiar Bengali flavors delivered with care.</p>"
+    },
+    {
+      "type": "text",
+      "id": "stat_1",
+      "label": "Trust chip 1",
+      "default": "5-star warmth"
+    },
+    {
+      "type": "text",
+      "id": "stat_2",
+      "label": "Trust chip 2",
+      "default": "Packed with care"
+    },
+    {
+      "type": "text",
+      "id": "stat_3",
+      "label": "Trust chip 3",
+      "default": "Trusted Bengali staples"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 32
+    }
+  ],
+  "blocks": [
+    {
+      "type": "column",
+      "name": "Testimonial",
+      "limit": 10,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Name",
+          "default": "Customer name"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Quote",
+          "default": "<p>A warm and memorable shopping experience.</p>"
+        },
+        {
+          "type": "text",
+          "id": "link_label",
+          "label": "Link label"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "BK Home Testimonials"
+    }
+  ]
+}
+{% endschema %}

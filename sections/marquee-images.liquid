@@ -21,6 +21,18 @@
     margin-left: 40px;
     width: calc({{section.settings.image_width}}px + 50px);;
   }
+
+  @media screen and (max-width: 749px) {
+    .section-{{ section.id }}.custom-marquee-images {
+      height: {{ section.settings.marquee_height | times: 0.72 | round: 0 }}px;
+    }
+
+    .section-{{ section.id }}.custom-marquee-images img {
+      margin-left: 24px;
+      width: calc({{ section.settings.image_width | times: 0.76 | round: 0 }}px + 30px);
+    }
+  }
+
   @keyframes marquee {
     from {
       transform: translateX(0);
