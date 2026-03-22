@@ -1,0 +1,421 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-list-collections",
+      "disabled": true,
+      "settings": {
+        "title": "Top Categories",
+        "sort": "date",
+        "image_ratio": "square",
+        "columns_desktop": 3,
+        "columns_mobile": "2"
+      }
+    },
+    "image_banner_P9cmKm": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_mMEB4L": {
+          "type": "heading",
+          "settings": {
+            "heading": "মুখে হাসি, বুকে বাংলা",
+            "heading_size": "h1"
+          }
+        },
+        "text_6Nizna": {
+          "type": "text",
+          "settings": {
+            "text": "Discover the widest range of products from Bengal, delivered to your doorsteps",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_mMEB4L",
+        "text_6Nizna"
+      ],
+      "disabled": true,
+      "settings": {
+        "image": "shopify://shop_images/pexels-dibakar-roy-2432543-5622816.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "image_behavior": "none",
+        "desktop_content_alignment": "center",
+        "mobile_content_alignment": "center",
+        "color_scheme": "",
+        "show_text_below": true,
+        "show_text_box": true,
+        "stack_images_on_mobile": true
+      }
+    },
+    "collection_list_nWLR7A": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_EJtQd4": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "rice"
+          }
+        },
+        "featured_collection_LdqJ8V": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "dal"
+          }
+        },
+        "featured_collection_PEddPP": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "bori"
+          }
+        },
+        "featured_collection_PRdNJ9": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "vegetables"
+          }
+        },
+        "featured_collection_e8JMRR": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "other-specials"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_EJtQd4",
+        "featured_collection_LdqJ8V",
+        "featured_collection_PEddPP",
+        "featured_collection_PRdNJ9",
+        "featured_collection_e8JMRR"
+      ],
+      "settings": {
+        "title": "Grocery",
+        "heading_size": "h1",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "color_scheme": "",
+        "show_view_all": true,
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 4
+      }
+    },
+    "collection_list_VgjNgA": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_HaRzXf": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "banchharam"
+          }
+        },
+        "featured_collection_DGjdnW": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "doiwala-sweets"
+          }
+        },
+        "featured_collection_ikVGWe": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "ganguram-and-grandsons"
+          }
+        },
+        "featured_collection_aQpzpy": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "hindustan-sweets"
+          }
+        },
+        "featured_collection_MTrQwa": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "mithai-sweets"
+          }
+        },
+        "featured_collection_CLt3Qq": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "nahoums-bakery"
+          }
+        },
+        "featured_collection_iyACYn": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "special-bengali-sweets"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_HaRzXf",
+        "featured_collection_DGjdnW",
+        "featured_collection_ikVGWe",
+        "featured_collection_aQpzpy",
+        "featured_collection_MTrQwa",
+        "featured_collection_CLt3Qq",
+        "featured_collection_iyACYn"
+      ],
+      "settings": {
+        "title": "Sweets",
+        "heading_size": "h1",
+        "image_ratio": "square",
+        "columns_desktop": 3,
+        "color_scheme": "scheme-1",
+        "show_view_all": true,
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 0
+      }
+    },
+    "collection_list_wXf94K": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_xCRp6x": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "tuk-tak"
+          }
+        },
+        "featured_collection_HETGQp": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "mukharochak"
+          }
+        },
+        "featured_collection_LtWNhR": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "bengali-snacks"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_xCRp6x",
+        "featured_collection_HETGQp",
+        "featured_collection_LtWNhR"
+      ],
+      "settings": {
+        "title": "Snacks",
+        "heading_size": "h1",
+        "image_ratio": "square",
+        "columns_desktop": 3,
+        "color_scheme": "",
+        "show_view_all": true,
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 16
+      }
+    },
+    "collection_list_nWFGhz": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_xghijV": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "assam-tea"
+          }
+        },
+        "featured_collection_JT7QcD": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "darjeeling-tea"
+          }
+        },
+        "featured_collection_YWrNyd": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "signature-blends"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_xghijV",
+        "featured_collection_JT7QcD",
+        "featured_collection_YWrNyd"
+      ],
+      "settings": {
+        "title": "Tea",
+        "heading_size": "h1",
+        "image_ratio": "square",
+        "columns_desktop": 3,
+        "color_scheme": "",
+        "show_view_all": true,
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 16
+      }
+    },
+    "collection_list_DjNHAW": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_RMAfHk": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "sunrise"
+          }
+        },
+        "featured_collection_HkFEBi": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "special-bengali-spices"
+          }
+        },
+        "featured_collection_MyV3qy": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "sunrise-masala-combos"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_RMAfHk",
+        "featured_collection_HkFEBi",
+        "featured_collection_MyV3qy"
+      ],
+      "settings": {
+        "title": "Spices",
+        "heading_size": "h1",
+        "image_ratio": "square",
+        "columns_desktop": 3,
+        "color_scheme": "",
+        "show_view_all": true,
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 16
+      }
+    },
+    "collection_list_kK48rh": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_hjUtFT": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "agarbatti"
+          }
+        },
+        "featured_collection_b3PgMm": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "puja-kits"
+          }
+        },
+        "featured_collection_W6i4N9": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "metal-products"
+          }
+        },
+        "featured_collection_XP4Bfw": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "puja-books"
+          }
+        },
+        "featured_collection_pVe6q8": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "prasad-sweets"
+          }
+        },
+        "featured_collection_pFgANG": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "other-special-items"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_hjUtFT",
+        "featured_collection_b3PgMm",
+        "featured_collection_W6i4N9",
+        "featured_collection_XP4Bfw",
+        "featured_collection_pVe6q8",
+        "featured_collection_pFgANG"
+      ],
+      "settings": {
+        "title": "Puja Samagri",
+        "heading_size": "h1",
+        "image_ratio": "square",
+        "columns_desktop": 3,
+        "color_scheme": "",
+        "show_view_all": true,
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 16
+      }
+    },
+    "collection_list_fnVfFk": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_wTMqCk": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "sharadiya-magazines"
+          }
+        },
+        "featured_collection_pzLFBt": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "books"
+          }
+        },
+        "featured_collection_RtXJEH": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "comics"
+          }
+        },
+        "featured_collection_NGHreU": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "bangla-magazines"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_wTMqCk",
+        "featured_collection_pzLFBt",
+        "featured_collection_RtXJEH",
+        "featured_collection_NGHreU"
+      ],
+      "settings": {
+        "title": "Reader's Section",
+        "heading_size": "h1",
+        "image_ratio": "square",
+        "columns_desktop": 3,
+        "color_scheme": "",
+        "show_view_all": true,
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 16
+      }
+    }
+  },
+  "order": [
+    "main",
+    "image_banner_P9cmKm",
+    "collection_list_nWLR7A",
+    "collection_list_VgjNgA",
+    "collection_list_wXf94K",
+    "collection_list_nWFGhz",
+    "collection_list_DjNHAW",
+    "collection_list_kK48rh",
+    "collection_list_fnVfFk"
+  ]
+}

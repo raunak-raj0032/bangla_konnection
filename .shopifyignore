@@ -1,0 +1,9 @@
+.git/*
+.github/*
+.vscode/*
+scripts/*
+README.md
+.gitattributes
+.gitignore
+shopify.theme.toml
+shopify.theme.toml.example

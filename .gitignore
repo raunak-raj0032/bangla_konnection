@@ -1,0 +1,8 @@
+shopify.theme.toml
+.shopify/
+.theme-check-cache/
+node_modules/
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store

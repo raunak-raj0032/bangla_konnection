@@ -1,0 +1,8 @@
+[environments.default]
+store = "your-store.myshopify.com"
+theme = "123456789012"
+
+# Use one authentication method:
+# 1. Leave password commented and let Shopify CLI prompt you to log in.
+# 2. Uncomment password and paste a Theme Access password from Shopify.
+# password = "shptka_your_theme_access_password"

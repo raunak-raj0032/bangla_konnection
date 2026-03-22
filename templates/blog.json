@@ -1,0 +1,114 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-blog",
+      "disabled": true,
+      "settings": {
+        "layout": "grid",
+        "show_image": true,
+        "image_height": "small",
+        "show_date": true,
+        "show_author": false,
+        "padding_top": 12,
+        "padding_bottom": 8
+      }
+    },
+    "ss_blog_2_KzVzDD": {
+      "type": "ss-blog-2",
+      "blocks": {
+        "article_eFGBcA": {
+          "type": "Article",
+          "settings": {
+            "article": "assam-tea-vs-darjeeling-tea-a-tea-lovers-adventure-in-indias-finest-brews/assam-tea-vs-darjeeling-tea-a-tea-lovers-adventure-in-indias-finest-brews"
+          }
+        },
+        "article_JDEexq": {
+          "type": "Article",
+          "settings": {
+            "article": "exploring-the-legacy-of-rabindranath-tagore-a-journey-through-his-words-and-world/exploring-the-legacy-of-rabindranath-tagore-a-journey-through-his-words-and-world"
+          }
+        },
+        "article_a4wk48": {
+          "type": "Article",
+          "settings": {
+            "article": "bori-bliss-a-beginners-guide-to-bengali-lentil-dumplings/bori-bliss-a-beginners-guide-to-bengali-lentil-dumplings"
+          }
+        },
+        "article_Gcryjc": {
+          "type": "Article",
+          "settings": {
+            "article": "essence-of-bengali-saraswati-puja-unveiling-traditions-mantras-and-essential-puja-samagri/essence-of-bengali-saraswati-puja-unveiling-traditions-mantras-and-essential-puja-samagri"
+          }
+        }
+      },
+      "block_order": [
+        "article_eFGBcA",
+        "article_JDEexq",
+        "article_a4wk48",
+        "article_Gcryjc"
+      ],
+      "settings": {
+        "button_text": "Read more",
+        "make_more_readable": true,
+        "remove_description_text": true,
+        "section_bg_color": "#ffffff",
+        "button_color": "#b11314",
+        "description_maintext_color": "#ffffff",
+        "title_font": "assistant_n4",
+        "description_font": "assistant_n4"
+      }
+    },
+    "blog_1_3VJ6eV": {
+      "type": "blog-1",
+      "blocks": {
+        "article_DxYUMh": {
+          "type": "Article",
+          "settings": {
+            "article": "poush-sankranti-in-bengal-a-symphony-of-notun-gur-pithe-kites-and-timeless-traditions/poush-sankranti-in-bengal-a-symphony-of-notun-gur-pithe-kites-and-timeless-traditions"
+          }
+        },
+        "article_LLHAaC": {
+          "type": "Article",
+          "settings": {
+            "article": "understanding-assam-ctc-tea-a-closer-look/understanding-assam-ctc-tea-a-closer-look"
+          }
+        },
+        "article_mbfUqx": {
+          "type": "Article",
+          "settings": {
+            "article": "bori-exploring-its-uses-and-nutritional-value/bori-exploring-its-uses-and-nutritional-value"
+          }
+        }
+      },
+      "block_order": [
+        "article_DxYUMh",
+        "article_LLHAaC",
+        "article_mbfUqx"
+      ],
+      "settings": {
+        "button_text": "Read more",
+        "make_more_readable": true,
+        "reverse": false,
+        "section_bg_color": "rgba(0,0,0,0)",
+        "button_color": "#b11314",
+        "description_maintext_color": "#ffffff",
+        "title_font": "assistant_n4",
+        "description_font": "assistant_n4"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "ss_blog_2_KzVzDD",
+    "blog_1_3VJ6eV"
+  ]
+}
