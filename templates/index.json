@@ -9,1238 +9,153 @@
  */
 {
   "sections": {
-    "slideshow": {
-      "type": "slideshow",
+    "bk_home_revamp_TNw3fP": {
+      "type": "bk-home-revamp",
       "blocks": {
-        "slide_wgjUtj": {
-          "type": "slide",
+        "collection_card_mishti": {
+          "type": "collection_card",
           "settings": {
-            "image": "shopify://shop_images/BK_-_BANNER_1917_x_626_px_d844829b-410f-4e0b-8056-141a5e67e498.jpg",
-            "image_link": "shopify://collections/boyam",
-            "heading": "",
-            "heading_size": "h1",
-            "subheading": "",
-            "button_label": "",
-            "link": "",
-            "button_style_secondary": false,
-            "box_align": "bottom-left",
-            "show_text_box": false,
-            "text_alignment": "center",
-            "image_overlay_opacity": 0,
-            "color_scheme": "scheme-1",
-            "text_alignment_mobile": "center"
+            "collection": "authentic-bengali-sweets-treats-online",
+            "tag": "Mishti staples",
+            "copy": "From jolbhora to baked roshogolla, the sweets aisle now feels calmer, richer, and easier to browse."
+          }
+        },
+        "collection_card_boyam": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "boyam",
+            "tag": "Ghorer jars",
+            "copy": "Pickles, chutneys, and homemade comfort are framed like an editorial pantry instead of a dense catalog."
+          }
+        },
+        "collection_card_grocery": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "grocery",
+            "tag": "Pantry reset",
+            "copy": "Rice, spices, dal, and everyday essentials sit in a more premium, easier-to-scan collection rhythm."
+          }
+        },
+        "collection_card_snacks": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "snacks",
+            "tag": "Cha-time crunch",
+            "copy": "Mukhorochak favorites and Kolkata-style munchies get a cleaner storefront with the same familiar warmth."
+          }
+        },
+        "collection_card_tea": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "tea",
+            "tag": "Bikeler cha",
+            "copy": "Leafy, fragrant, and nostalgic picks for the evening cup that still anchors the whole day."
+          }
+        },
+        "collection_card_veg": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "vegetables",
+            "tag": "Fresh market",
+            "copy": "A fresher-looking corner for produce and kitchen staples that deserve more breathing room."
+          }
+        },
+        "spotlight_product_moa": {
+          "type": "spotlight_product",
+          "settings": {
+            "product": "joynagarer-moa-12-pieces",
+            "kicker": "Winter favorite",
+            "copy": "One of the most instantly nostalgic seasonal finds on the store, now positioned like a true signature highlight."
+          }
+        },
+        "spotlight_product_gur": {
+          "type": "spotlight_product",
+          "settings": {
+            "product": "patali-gur-khejurer-gur",
+            "kicker": "Pantry icon",
+            "copy": "A Bengali kitchen essential that anchors the homepage with warmth, depth, and a more premium visual pause."
+          }
+        },
+        "spotlight_product_nahoums": {
+          "type": "spotlight_product",
+          "settings": {
+            "product": "nahoums-special-christmas-fruit-cake",
+            "kicker": "Kolkata legend",
+            "copy": "An instantly recognizable classic that helps the homepage feel more curated and less carousel-heavy."
+          }
+        },
+        "spotlight_product_rice": {
+          "type": "spotlight_product",
+          "settings": {
+            "product": "gobindobhog-rice",
+            "kicker": "Everyday essential",
+            "copy": "A pantry staple with emotional pull, positioned here to balance the sweets and snack-heavy nostalgia."
+          }
+        },
+        "trust_note_palette": {
+          "type": "trust_note",
+          "settings": {
+            "title": "Same palette, sharper finish",
+            "text": "The maroon, cream, and saffron story stays intact, but the homepage now breathes and feels more premium."
+          }
+        },
+        "trust_note_culture": {
+          "type": "trust_note",
+          "settings": {
+            "title": "Bengali cues without clutter",
+            "text": "The cultural hint comes through in the storytelling, warmth, and ornamental rhythm rather than heavy decoration."
+          }
+        },
+        "trust_note_shopping": {
+          "type": "trust_note",
+          "settings": {
+            "title": "Designed for modern shopping",
+            "text": "Collections, spotlights, and trust signals are easier to scan on mobile, making the landing page feel cleaner and faster."
           }
         }
       },
       "block_order": [
-        "slide_wgjUtj"
-      ],
-      "custom_css": [
-        "@media (max-width: 768px) {.slideshow {display: none !important; }}"
-      ],
-      "settings": {
-        "layout": "full_bleed",
-        "slide_height": "adapt_image",
-        "slider_visual": "dots",
-        "auto_rotate": true,
-        "change_slides_speed": 3,
-        "image_behavior": "none",
-        "show_text_below": false,
-        "accessibility_info": "Slideshow about our brand"
-      }
-    },
-    "slideshow_NrMHQm": {
-      "type": "slideshow",
-      "blocks": {
-        "slide_yB8FJk": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/BK_-_BANNER_PHONE_500_x_671_px.jpg",
-            "image_link": "shopify://collections/boyam",
-            "heading": "",
-            "heading_size": "h1",
-            "subheading": "",
-            "button_label": "",
-            "link": "",
-            "button_style_secondary": false,
-            "box_align": "bottom-left",
-            "show_text_box": false,
-            "text_alignment": "center",
-            "image_overlay_opacity": 0,
-            "color_scheme": "scheme-1",
-            "text_alignment_mobile": "center"
-          }
-        }
-      },
-      "block_order": [
-        "slide_yB8FJk"
-      ],
-      "custom_css": [
-        "@media (min-width: 768px) {.slideshow {display: none !important; }}"
+        "collection_card_mishti",
+        "collection_card_boyam",
+        "collection_card_grocery",
+        "collection_card_snacks",
+        "collection_card_tea",
+        "collection_card_veg",
+        "spotlight_product_moa",
+        "spotlight_product_gur",
+        "spotlight_product_nahoums",
+        "spotlight_product_rice",
+        "trust_note_palette",
+        "trust_note_culture",
+        "trust_note_shopping"
       ],
       "settings": {
-        "layout": "full_bleed",
-        "slide_height": "adapt_image",
-        "slider_visual": "dots",
-        "auto_rotate": true,
-        "change_slides_speed": 3,
-        "image_behavior": "none",
-        "show_text_below": false,
-        "accessibility_info": "Slideshow about our brand"
-      }
-    },
-    "hero_products_section": {
-      "type": "heroProducts",
-      "custom_css": [
-        "@media (max: 768px) {h2 {margin-bottom: 20px; }}"
-      ],
-      "settings": {
-        "items_mt": 40,
-        "collection": "",
-        "product_list": [
-          "nahoums-special-christmas-fruit-cake",
-          "joynagarer-moa-12-pieces",
-          "nalen-gur-450-ml",
-          "patali-gur-khejurer-gur",
-          "darjeeling-tea-signature-variant",
-          "nahoums-rich-fruit-cake",
-          "boyams-kool-er-chutney",
-          "ujjalas-chanachur-_pos-3-_psq-chanachur-_ss-e-_v-1-0",
-          "gobindobhog-rice",
-          "gondhoraj-lebu",
-          "ghee-jharna",
-          "baked-rossogolla-10pcs-box-balaram-mullick-radharaman-mullick",
-          "jal-bhara-sandesh-banchharam-10-pieces",
-          "jaina-silpa-mandir-ajowan-lemon-pachak",
-          "the-premium-blend-assam-darjeeling-tea-900-g"
-        ],
-        "stack_products": false,
-        "show_bar": true,
-        "show_dynamic_checkout": true,
-        "top_bar": false,
-        "product_show": 10,
-        "product_per_desktop": 4,
-        "product_per_mobile": "1",
-        "image_radius": 12,
-        "image_ration": "square",
-        "use_custom_height": false,
-        "image_height_desktop": 400,
-        "image_height_mobile": 270,
-        "show_second": true,
-        "use_shadow": false,
-        "use_radius": true,
-        "card_padding_horizontal": 4,
-        "card_padding_vertical": 16,
-        "card_title_custom": true,
-        "card_title_font": "alegreya_sans_n7",
-        "card_title_size": 18,
-        "card_title_letter": 0,
-        "card_title_height": 110,
-        "heading": "Shop What's Hot",
-        "heading_custom": true,
-        "heading_font": "asul_n7",
-        "heading_size": 64,
-        "heading_letter": 0,
-        "heading_height": 100,
-        "heading_align": "center",
-        "sub_heading": "",
-        "sub_heading_custom": false,
-        "sub_heading_font": "alegreya_n4",
-        "sub_heading_size": 38,
-        "sub_heading_letter": 0,
-        "sub_heading_height": 100,
-        "sub_heading_align": "center",
-        "invert_content": false,
-        "link": "",
-        "link_url": "",
-        "link_custom": false,
-        "link_font": "assistant_n4",
-        "link_size": 0,
-        "link_letter": 0,
-        "link_height": 50,
-        "link_position": false,
-        "link_mobile": false,
-        "card_price_custom": true,
-        "card_price_font": "system_ui_n4",
-        "card_price_size": 20,
-        "card_price_letter": 0,
-        "card_price_height": 100,
-        "card_price_mt": 12,
-        "arrow_size": 0,
-        "arrow_size_mobile": 0,
-        "arrow_hide_mobile": true,
-        "link_color": "#000000",
-        "link_hover_color": "#000000",
-        "link_arrow_color": "#000000",
-        "link_background_color": "#ffffff",
-        "link_background_hover_color": "#000000",
-        "card_content_bg_color": "#f2efdd",
-        "card_title_color": "#000000",
-        "card_price_color": "#000000",
-        "arrow_color": "#ffffff",
-        "arrow_hover_color": "#ffffff",
-        "arrow_bg_color": "#f2f2f2",
-        "arrow_bg_hover_color": "#f2f2f2",
-        "arrow_border_color": "#c4c4c4",
-        "arrow_border_hover_color": "#c4c4c4",
-        "progress_color": "#000000",
-        "heading_color": "#3d081b",
-        "sub_heading_color": "#000000",
-        "background_color": "#e39e60",
-        "background_gradient": "",
-        "border_color": "#000000",
-        "margin_top": 0,
-        "margin_bottom": 0,
-        "padding_top": 20,
-        "padding_bottom": 20,
-        "padding_horizontal": 5,
-        "padding_horizontal_mobile": 1.5,
-        "full_width": true,
-        "content_width": 130,
-        "border_thickness": 0
-      }
-    },
-    "featured_collection_CKRgkf": {
-      "type": "featured-collection",
-      "name": "t:sections.featured-collection.presets.name",
-      "settings": {
-        "title": "<strong>Winter Delight</strong>",
-        "heading_size": "h1",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "collection": "nahoums-bakery",
-        "products_to_show": 9,
-        "columns_desktop": 4,
-        "full_width": false,
-        "show_view_all": true,
-        "view_all_style": "solid",
-        "enable_desktop_slider": false,
-        "color_scheme": "",
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": false,
-        "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "none",
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "ss_featured_collection_LQ4r7p": {
-      "type": "ss-featured-collection",
-      "disabled": true,
-      "settings": {
-        "items_mt": 40,
-        "collection": "",
-        "product_list": [
-          "nalen-gur-450-ml",
-          "patali-gur-khejurer-gur",
-          "joynagarer-moa-12-pieces",
-          "jalbhora-taalshash-sandesh-doiwala-10-pcs",
-          "jal-bhara-sandesh-banchharam-10-pieces",
-          "nahoums-special-christmas-fruit-cake",
-          "nahoums-rich-fruit-cake",
-          "nahoums-light-plum-cake",
-          "macaroons",
-          "thor-banana-stem",
-          "mocha",
-          "darjeeling-tea-signature-variant"
-        ],
-        "stack_products": false,
-        "show_bar": false,
-        "top_bar": false,
-        "product_show": 10,
-        "product_per_desktop": 4,
-        "product_per_mobile": "1.3",
-        "image_radius": 12,
-        "image_ration": "square",
-        "use_custom_height": false,
-        "image_height_desktop": 200,
-        "image_height_mobile": 200,
-        "show_second": false,
-        "use_shadow": true,
-        "use_radius": true,
-        "card_padding_horizontal": 12,
-        "card_padding_vertical": 16,
-        "card_title_custom": true,
-        "card_title_font": "nunito_n6",
-        "card_title_size": 18,
-        "card_title_letter": 0,
-        "card_title_height": 130,
-        "heading": "Winter Collection",
-        "heading_custom": true,
-        "heading_font": "asul_n7",
-        "heading_size": 36,
-        "heading_letter": 0,
-        "heading_height": 150,
-        "heading_align": "center",
-        "sub_heading": "",
-        "sub_heading_custom": false,
-        "sub_heading_font": "assistant_n2",
-        "sub_heading_size": 20,
-        "sub_heading_letter": 0.7,
-        "sub_heading_height": 200,
-        "sub_heading_align": "left",
-        "invert_content": false,
-        "link": "",
-        "link_url": "shopify://collections",
-        "link_custom": false,
-        "link_font": "assistant_n4",
-        "link_size": 28,
-        "link_letter": 1,
-        "link_height": 140,
-        "link_position": false,
-        "link_mobile": false,
-        "card_price_custom": true,
-        "card_price_font": "inter_n5",
-        "card_price_size": 16,
-        "card_price_letter": 0,
-        "card_price_height": 100,
-        "card_price_mt": 16,
-        "arrow_size": 50,
-        "arrow_size_mobile": 40,
-        "arrow_hide_mobile": true,
-        "link_color": "#000000",
-        "link_hover_color": "#000000",
-        "link_arrow_color": "#000000",
-        "link_background_color": "#e6e6e6",
-        "link_background_hover_color": "#000000",
-        "card_content_bg_color": "#f2efdd",
-        "card_title_color": "#3d081b",
-        "card_price_color": "#3d081b",
-        "arrow_color": "#ffffff",
-        "arrow_hover_color": "#ffffff",
-        "arrow_bg_color": "#ffffff",
-        "arrow_bg_hover_color": "#ffffff",
-        "arrow_border_color": "#c4c4c4",
-        "arrow_border_hover_color": "#c4c4c4",
-        "progress_color": "#000000",
-        "heading_color": "#3d081b",
-        "sub_heading_color": "#3d081b",
-        "background_color": "#faf9e1",
-        "background_gradient": "",
-        "border_color": "#000000",
-        "margin_top": 0,
-        "margin_bottom": 0,
-        "padding_top": 36,
-        "padding_bottom": 36,
-        "padding_horizontal": 5,
-        "padding_horizontal_mobile": 1.5,
-        "full_width": true,
-        "content_width": 130,
-        "border_thickness": 0
-      }
-    },
-    "ss_featured_collection_Jr4ifh": {
-      "type": "ss-featured-collection",
-      "settings": {
-        "items_mt": 40,
-        "collection": "",
-        "product_list": [
-          "begun-brinjal",
-          "uche-bitter-gourd-karela",
-          "bullet-lonka-or-bullet-chilli",
-          "gondhoraj-lebu",
-          "mocha",
-          "gol-lau-bottle-gourd-round",
-          "kancha-lonka-chili",
-          "thor-banana-stem"
-        ],
-        "stack_products": false,
-        "show_bar": false,
-        "top_bar": false,
-        "product_show": 10,
-        "product_per_desktop": 4,
-        "product_per_mobile": "1.3",
-        "image_radius": 12,
-        "image_ration": "square",
-        "use_custom_height": false,
-        "image_height_desktop": 200,
-        "image_height_mobile": 200,
-        "show_second": false,
-        "use_shadow": true,
-        "use_radius": true,
-        "card_padding_horizontal": 12,
-        "card_padding_vertical": 16,
-        "card_title_custom": true,
-        "card_title_font": "nunito_n6",
-        "card_title_size": 18,
-        "card_title_letter": 0,
-        "card_title_height": 130,
-        "heading": "Farm Fresh",
-        "heading_custom": true,
-        "heading_font": "asul_n7",
-        "heading_size": 36,
-        "heading_letter": 0,
-        "heading_height": 150,
-        "heading_align": "center",
-        "sub_heading": "",
-        "sub_heading_custom": false,
-        "sub_heading_font": "assistant_n2",
-        "sub_heading_size": 20,
-        "sub_heading_letter": 0.7,
-        "sub_heading_height": 200,
-        "sub_heading_align": "left",
-        "invert_content": false,
-        "link": "",
-        "link_url": "shopify://collections",
-        "link_custom": false,
-        "link_font": "assistant_n4",
-        "link_size": 28,
-        "link_letter": 1,
-        "link_height": 140,
-        "link_position": false,
-        "link_mobile": false,
-        "card_price_custom": true,
-        "card_price_font": "inter_n5",
-        "card_price_size": 16,
-        "card_price_letter": 0,
-        "card_price_height": 100,
-        "card_price_mt": 16,
-        "arrow_size": 50,
-        "arrow_size_mobile": 40,
-        "arrow_hide_mobile": true,
-        "link_color": "#000000",
-        "link_hover_color": "#000000",
-        "link_arrow_color": "#000000",
-        "link_background_color": "#e6e6e6",
-        "link_background_hover_color": "#000000",
-        "card_content_bg_color": "#f2efdd",
-        "card_title_color": "#3d081b",
-        "card_price_color": "#3d081b",
-        "arrow_color": "#ffffff",
-        "arrow_hover_color": "#ffffff",
-        "arrow_bg_color": "#ffffff",
-        "arrow_bg_hover_color": "#ffffff",
-        "arrow_border_color": "#c4c4c4",
-        "arrow_border_hover_color": "#c4c4c4",
-        "progress_color": "#000000",
-        "heading_color": "#3d081b",
-        "sub_heading_color": "#3d081b",
-        "background_color": "#faf9e1",
-        "background_gradient": "",
-        "border_color": "#000000",
-        "margin_top": 0,
-        "margin_bottom": 0,
-        "padding_top": 36,
-        "padding_bottom": 36,
-        "padding_horizontal": 5,
-        "padding_horizontal_mobile": 1.5,
-        "full_width": true,
-        "content_width": 130,
-        "border_thickness": 0
-      }
-    },
-    "ss_featured_collection_CDQcwG": {
-      "type": "ss-featured-collection",
-      "settings": {
-        "items_mt": 40,
-        "collection": "",
-        "product_list": [
-          "ujjalas-chanachur-_pos-3-_psq-chanachur-_ss-e-_v-1-0",
-          "tuk-tak-hing-chanachur",
-          "gobindobhog-rice",
-          "classic-kolkata-chow-pack-of-6",
-          "posto-bori-beuli-dal",
-          "aamshotto",
-          "masoor-dal-bori"
-        ],
-        "stack_products": false,
-        "show_bar": false,
-        "top_bar": false,
-        "product_show": 10,
-        "product_per_desktop": 4,
-        "product_per_mobile": "1.3",
-        "image_radius": 12,
-        "image_ration": "square",
-        "use_custom_height": false,
-        "image_height_desktop": 200,
-        "image_height_mobile": 200,
-        "show_second": false,
-        "use_shadow": true,
-        "use_radius": true,
-        "card_padding_horizontal": 12,
-        "card_padding_vertical": 16,
-        "card_title_custom": true,
-        "card_title_font": "nunito_n6",
-        "card_title_size": 18,
-        "card_title_letter": 0,
-        "card_title_height": 130,
-        "heading": "Best Sellers",
-        "heading_custom": true,
-        "heading_font": "asul_n7",
-        "heading_size": 36,
-        "heading_letter": 0,
-        "heading_height": 150,
-        "heading_align": "center",
-        "sub_heading": "খুঁজছিলেন? এইগুলোই সবচেয়ে চাহিদার!",
-        "sub_heading_custom": false,
-        "sub_heading_font": "assistant_n2",
-        "sub_heading_size": 20,
-        "sub_heading_letter": 0.7,
-        "sub_heading_height": 200,
-        "sub_heading_align": "left",
-        "invert_content": false,
-        "link": "",
-        "link_url": "shopify://collections",
-        "link_custom": false,
-        "link_font": "assistant_n4",
-        "link_size": 28,
-        "link_letter": 1,
-        "link_height": 140,
-        "link_position": false,
-        "link_mobile": false,
-        "card_price_custom": true,
-        "card_price_font": "inter_n5",
-        "card_price_size": 16,
-        "card_price_letter": 0,
-        "card_price_height": 100,
-        "card_price_mt": 16,
-        "arrow_size": 50,
-        "arrow_size_mobile": 40,
-        "arrow_hide_mobile": true,
-        "link_color": "#000000",
-        "link_hover_color": "#000000",
-        "link_arrow_color": "#000000",
-        "link_background_color": "#e6e6e6",
-        "link_background_hover_color": "#000000",
-        "card_content_bg_color": "#f2efdd",
-        "card_title_color": "#3d081b",
-        "card_price_color": "#3d081b",
-        "arrow_color": "#ffffff",
-        "arrow_hover_color": "#ffffff",
-        "arrow_bg_color": "#ffffff",
-        "arrow_bg_hover_color": "#ffffff",
-        "arrow_border_color": "#c4c4c4",
-        "arrow_border_hover_color": "#c4c4c4",
-        "progress_color": "#000000",
-        "heading_color": "#3d081b",
-        "sub_heading_color": "#3d081b",
-        "background_color": "#faf9e1",
-        "background_gradient": "",
-        "border_color": "#000000",
-        "margin_top": 0,
-        "margin_bottom": 0,
-        "padding_top": 36,
-        "padding_bottom": 36,
-        "padding_horizontal": 5,
-        "padding_horizontal_mobile": 1.5,
-        "full_width": true,
-        "content_width": 130,
-        "border_thickness": 0
-      }
-    },
-    "ss_featured_collection_GMG3BP": {
-      "type": "ss-featured-collection",
-      "settings": {
-        "items_mt": 40,
-        "collection": "",
-        "product_list": [
-          "tuk-tak-hing-chanachur",
-          "tuk-tak-daal-ar-curry",
-          "tuk-tak-hebby-jhaal",
-          "tuk-tak-masala-chire",
-          "tuk-tak-tok-daal",
-          "tuk-tak-ektu-curry"
-        ],
-        "stack_products": false,
-        "show_bar": false,
-        "top_bar": false,
-        "product_show": 10,
-        "product_per_desktop": 4,
-        "product_per_mobile": "1.3",
-        "image_radius": 12,
-        "image_ration": "square",
-        "use_custom_height": false,
-        "image_height_desktop": 200,
-        "image_height_mobile": 200,
-        "show_second": false,
-        "use_shadow": true,
-        "use_radius": true,
-        "card_padding_horizontal": 12,
-        "card_padding_vertical": 16,
-        "card_title_custom": true,
-        "card_title_font": "nunito_n6",
-        "card_title_size": 18,
-        "card_title_letter": 0,
-        "card_title_height": 130,
-        "heading": "Tuk-Tak",
-        "heading_custom": true,
-        "heading_font": "asul_n7",
-        "heading_size": 36,
-        "heading_letter": 0,
-        "heading_height": 150,
-        "heading_align": "center",
-        "sub_heading": "\"হয়ে যাক টুক টাক।\"",
-        "sub_heading_custom": false,
-        "sub_heading_font": "gluten_n4",
-        "sub_heading_size": 20,
-        "sub_heading_letter": 0.7,
-        "sub_heading_height": 200,
-        "sub_heading_align": "left",
-        "invert_content": false,
-        "link": "",
-        "link_url": "shopify://collections",
-        "link_custom": false,
-        "link_font": "assistant_n4",
-        "link_size": 28,
-        "link_letter": 1,
-        "link_height": 140,
-        "link_position": false,
-        "link_mobile": false,
-        "card_price_custom": true,
-        "card_price_font": "inter_n5",
-        "card_price_size": 16,
-        "card_price_letter": 0,
-        "card_price_height": 100,
-        "card_price_mt": 16,
-        "arrow_size": 50,
-        "arrow_size_mobile": 40,
-        "arrow_hide_mobile": true,
-        "link_color": "#000000",
-        "link_hover_color": "#000000",
-        "link_arrow_color": "#000000",
-        "link_background_color": "#e6e6e6",
-        "link_background_hover_color": "#000000",
-        "card_content_bg_color": "#f2efdd",
-        "card_title_color": "#3d081b",
-        "card_price_color": "#3d081b",
-        "arrow_color": "#ffffff",
-        "arrow_hover_color": "#ffffff",
-        "arrow_bg_color": "#ffffff",
-        "arrow_bg_hover_color": "#f2f2f2",
-        "arrow_border_color": "#c4c4c4",
-        "arrow_border_hover_color": "#c4c4c4",
-        "progress_color": "#000000",
-        "heading_color": "#3d081b",
-        "sub_heading_color": "#3d081b",
-        "background_color": "#fffcec",
-        "background_gradient": "",
-        "border_color": "#000000",
-        "margin_top": 0,
-        "margin_bottom": 0,
-        "padding_top": 36,
-        "padding_bottom": 36,
-        "padding_horizontal": 5,
-        "padding_horizontal_mobile": 1.5,
-        "full_width": true,
-        "content_width": 130,
-        "border_thickness": 0
-      }
-    },
-    "image_with_text_RG9arT": {
-      "type": "image-with-text",
-      "blocks": {
-        "heading_pi9rVw": {
-          "type": "heading",
-          "settings": {
-            "heading": "Boyam – Taste That Feels Like Home",
-            "heading_size": "h1"
-          }
-        },
-        "text_YLkJz9": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Homemade pickles crafted with age-old recipes</p>",
-            "text_style": "body"
-          }
-        },
-        "button_mUxzn9": {
-          "type": "button",
-          "settings": {
-            "button_label": "Shop",
-            "button_link": "shopify://collections/boyam",
-            "button_style_secondary": false
-          }
-        }
-      },
-      "block_order": [
-        "heading_pi9rVw",
-        "text_YLkJz9",
-        "button_mUxzn9"
-      ],
-      "custom_css": [],
-      "settings": {
-        "image": "shopify://shop_images/57.jpg",
-        "height": "medium",
-        "desktop_image_width": "small",
-        "layout": "image_first",
-        "desktop_content_position": "middle",
-        "desktop_content_alignment": "center",
-        "content_layout": "overlap",
-        "section_color_scheme": "scheme-1",
-        "color_scheme": "scheme-d296c6bd-faad-4ace-b9e0-77778cf857ff",
-        "image_behavior": "none",
-        "mobile_content_alignment": "center",
-        "padding_top": 60,
-        "padding_bottom": 40
-      }
-    },
-    "ss_featured_collection_JYCU77": {
-      "type": "ss-featured-collection",
-      "settings": {
-        "items_mt": 40,
-        "collection": "",
-        "product_list": [
-          "sona-moong-dal",
-          "posto-dana",
-          "miniket-rice",
-          "masoor-dal-whole",
-          "special-masala-bori",
-          "gobindobhog-rice",
-          "panch-phoron",
-          "bori-biulir-dal",
-          "radhuni",
-          "matar-dal"
-        ],
-        "stack_products": false,
-        "show_bar": false,
-        "top_bar": false,
-        "product_show": 10,
-        "product_per_desktop": 4,
-        "product_per_mobile": "1.3",
-        "image_radius": 12,
-        "image_ration": "square",
-        "use_custom_height": false,
-        "image_height_desktop": 200,
-        "image_height_mobile": 200,
-        "show_second": false,
-        "use_shadow": true,
-        "use_radius": true,
-        "card_padding_horizontal": 12,
-        "card_padding_vertical": 16,
-        "card_title_custom": true,
-        "card_title_font": "nunito_n6",
-        "card_title_size": 18,
-        "card_title_letter": 0,
-        "card_title_height": 130,
-        "heading": "Household Essentials",
-        "heading_custom": true,
-        "heading_font": "asul_n7",
-        "heading_size": 36,
-        "heading_letter": 0,
-        "heading_height": 150,
-        "heading_align": "center",
-        "sub_heading": "",
-        "sub_heading_custom": false,
-        "sub_heading_font": "gluten_n4",
-        "sub_heading_size": 20,
-        "sub_heading_letter": 0.7,
-        "sub_heading_height": 200,
-        "sub_heading_align": "left",
-        "invert_content": false,
-        "link": "",
-        "link_url": "shopify://collections",
-        "link_custom": false,
-        "link_font": "assistant_n4",
-        "link_size": 28,
-        "link_letter": 1,
-        "link_height": 140,
-        "link_position": false,
-        "link_mobile": false,
-        "card_price_custom": true,
-        "card_price_font": "nunito_n4",
-        "card_price_size": 16,
-        "card_price_letter": 0,
-        "card_price_height": 100,
-        "card_price_mt": 16,
-        "arrow_size": 50,
-        "arrow_size_mobile": 40,
-        "arrow_hide_mobile": true,
-        "link_color": "#000000",
-        "link_hover_color": "#000000",
-        "link_arrow_color": "#000000",
-        "link_background_color": "#e6e6e6",
-        "link_background_hover_color": "#000000",
-        "card_content_bg_color": "#f2efdd",
-        "card_title_color": "#3d081b",
-        "card_price_color": "#3d081b",
-        "arrow_color": "#ffffff",
-        "arrow_hover_color": "#ffffff",
-        "arrow_bg_color": "#ffffff",
-        "arrow_bg_hover_color": "#f2f2f2",
-        "arrow_border_color": "#c4c4c4",
-        "arrow_border_hover_color": "#c4c4c4",
-        "progress_color": "#000000",
-        "heading_color": "#3d081b",
-        "sub_heading_color": "#3d081b",
-        "background_color": "#fffcec",
-        "background_gradient": "",
-        "border_color": "#000000",
-        "margin_top": 0,
-        "margin_bottom": 0,
-        "padding_top": 36,
-        "padding_bottom": 36,
-        "padding_horizontal": 5,
-        "padding_horizontal_mobile": 1.5,
-        "full_width": true,
-        "content_width": 130,
-        "border_thickness": 0
-      }
-    },
-    "ss_text_block_mFmwXk": {
-      "type": "ss-text-block",
-      "blocks": {
-        "text_Lkk6n6": {
-          "type": "text",
-          "settings": {
-            "heading": "<h1>Seasonal Bestseller</h1>",
-            "color": "#3d081b",
-            "font_size": 30,
-            "richtext": "<p>পূজোতে ভাবনা কী, আমাদের কিটে পাবেন সবকিছুই</p>",
-            "richtext_color": "#3d081b",
-            "richtext_font_size": 21
-          }
-        }
-      },
-      "block_order": [
-        "text_Lkk6n6"
-      ],
-      "disabled": true,
-      "settings": {
-        "padding_header": 0,
-        "padding_button": 0,
-        "background-color": "#f2efdd",
-        "padding_top": 20,
-        "padding_bottom": 0,
-        "section-width": 80
-      }
-    },
-    "featured_product_YY8KMY": {
-      "type": "featured-product",
-      "blocks": {
-        "title_tCNeCM": {
-          "type": "title",
-          "settings": {
-            "heading_size": "h1"
-          }
-        },
-        "text_8TUyL4": {
-          "type": "text",
-          "settings": {
-            "text": "Our best selling product during Puja season! Your one stop shop for all things needed for Ashtami Puja",
-            "text_style": "body"
-          }
-        },
-        "price_zBbkzg": {
-          "type": "price",
-          "settings": {}
-        },
-        "variant_picker_RUK7Dy": {
-          "type": "variant_picker",
-          "disabled": true,
-          "settings": {
-            "picker_type": "button",
-            "swatch_shape": "circle"
-          }
-        },
-        "quantity_selector_EGcP6z": {
-          "type": "quantity_selector",
-          "settings": {}
-        },
-        "buy_buttons_HGdPEf": {
-          "type": "buy_buttons",
-          "settings": {
-            "show_dynamic_checkout": false,
-            "show_gift_card_recipient": false
-          }
-        },
-        "share_8pnXmK": {
-          "type": "share",
-          "settings": {
-            "share_label": "Share"
-          }
-        }
-      },
-      "block_order": [
-        "title_tCNeCM",
-        "text_8TUyL4",
-        "price_zBbkzg",
-        "variant_picker_RUK7Dy",
-        "quantity_selector_EGcP6z",
-        "buy_buttons_HGdPEf",
-        "share_8pnXmK"
-      ],
-      "disabled": true,
-      "settings": {
-        "product": "lakshmi-pujo",
         "color_scheme": "scheme-1",
-        "secondary_background": false,
-        "media_size": "small",
-        "constrain_to_viewport": true,
-        "media_fit": "cover",
-        "media_position": "left",
-        "image_zoom": "lightbox",
-        "hide_variants": false,
-        "enable_video_looping": false,
-        "padding_top": 8,
-        "padding_bottom": 24
-      }
-    },
-    "collection_list_DcrncK": {
-      "type": "collection-list",
-      "blocks": {
-        "featured_collection_q9aFpH": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "boyam"
-          }
-        },
-        "featured_collection_GwrMTt": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "snacks"
-          }
-        },
-        "featured_collection_dXBgbm": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "authentic-bengali-sweets-treats-online"
-          }
-        },
-        "featured_collection_UaBiQr": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "tea"
-          }
-        },
-        "featured_collection_jnQz3n": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "grocery"
-          }
-        },
-        "featured_collection_pDFDnw": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "other-specials"
-          }
-        },
-        "featured_collection_BfUq67": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "vegetables"
-          }
-        }
-      },
-      "block_order": [
-        "featured_collection_q9aFpH",
-        "featured_collection_GwrMTt",
-        "featured_collection_dXBgbm",
-        "featured_collection_UaBiQr",
-        "featured_collection_jnQz3n",
-        "featured_collection_pDFDnw",
-        "featured_collection_BfUq67"
-      ],
-      "settings": {
-        "title": "Curated Collections",
-        "heading_size": "h0",
-        "image_ratio": "square",
-        "columns_desktop": 5,
-        "color_scheme": "",
-        "show_view_all": false,
-        "columns_mobile": "2",
-        "swipe_on_mobile": true,
-        "padding_top": 12,
+        "eyebrow": "Ghorer shad, redesigned",
+        "heading": "A sleeker Bangla homepage with the warmth still intact.",
+        "text": "<p>Bangla Konnection now opens with more breathing room, clearer pathways, and a softer editorial feel, while the familiar maroon, cream, and saffron palette still carries the identity.</p>",
+        "primary_button_label": "Explore collections",
+        "primary_button_link": "shopify://collections",
+        "secondary_button_label": "Start with sweets",
+        "secondary_button_link": "shopify://collections/authentic-bengali-sweets-treats-online",
+        "hero_image": "",
+        "hero_collection": "authentic-bengali-sweets-treats-online",
+        "hero_card_badge": "Editor-picked",
+        "hero_card_title": "Taste that feels like home",
+        "hero_card_text": "A gentler, more premium first impression built around sweets, pantry staples, and Kolkata favorites.",
+        "hero_card_link_label": "Browse the edit",
+        "hero_card_link": "shopify://collections/authentic-bengali-sweets-treats-online",
+        "stat_1_value": "6+ aisles",
+        "stat_1_label": "Mishti, pantry, snacks, tea, vegetables, and more",
+        "stat_2_value": "Pan-India",
+        "stat_2_label": "A homepage flow designed around modern delivery behavior",
+        "stat_3_value": "Authentic",
+        "stat_3_label": "Beloved brands, classics, and Bengal-first pantry staples",
+        "story_heading": "A cleaner homepage, still rooted in Bengal.",
+        "story_text": "<p>The redesign keeps the same emotional color story but swaps the crowded homepage stack for a more composed editorial flow. It feels more contemporary, more premium, and still unmistakably Bangla Konnection.</p>",
+        "story_quote": "Ghorer shad, with a sleeker city rhythm.",
+        "padding_top": 36,
         "padding_bottom": 56
-      }
-    },
-    "ss_featured_collection_gBPj8p": {
-      "type": "ss-featured-collection",
-      "disabled": true,
-      "settings": {
-        "items_mt": 40,
-        "collection": "",
-        "product_list": [
-          "nahoums-rich-fruit-cake",
-          "nahoums-light-plum-cake",
-          "nahoums-cheese-cakes-6-pcs",
-          "nahoums-special-christmas-fruit-cake",
-          "ganguram-and-grandsons-khirer-chop-12-pcs",
-          "mishti-doi-nabadwip-er-lal-doi-doiwala"
-        ],
-        "stack_products": false,
-        "show_bar": false,
-        "top_bar": false,
-        "product_show": 10,
-        "product_per_desktop": 4,
-        "product_per_mobile": "1.3",
-        "image_radius": 12,
-        "image_ration": "square",
-        "use_custom_height": false,
-        "image_height_desktop": 200,
-        "image_height_mobile": 200,
-        "show_second": false,
-        "use_shadow": true,
-        "use_radius": true,
-        "card_padding_horizontal": 12,
-        "card_padding_vertical": 16,
-        "card_title_custom": true,
-        "card_title_font": "nunito_n6",
-        "card_title_size": 18,
-        "card_title_letter": 0,
-        "card_title_height": 130,
-        "heading": "Season-ally Lovely",
-        "heading_custom": true,
-        "heading_font": "asul_n7",
-        "heading_size": 36,
-        "heading_letter": 0,
-        "heading_height": 150,
-        "heading_align": "center",
-        "sub_heading": "Authentic Quality",
-        "sub_heading_custom": false,
-        "sub_heading_font": "gluten_n4",
-        "sub_heading_size": 20,
-        "sub_heading_letter": 0.7,
-        "sub_heading_height": 200,
-        "sub_heading_align": "left",
-        "invert_content": false,
-        "link": "",
-        "link_url": "shopify://collections",
-        "link_custom": false,
-        "link_font": "assistant_n4",
-        "link_size": 28,
-        "link_letter": 1,
-        "link_height": 140,
-        "link_position": false,
-        "link_mobile": false,
-        "card_price_custom": true,
-        "card_price_font": "nunito_n4",
-        "card_price_size": 16,
-        "card_price_letter": 0,
-        "card_price_height": 100,
-        "card_price_mt": 16,
-        "arrow_size": 50,
-        "arrow_size_mobile": 40,
-        "arrow_hide_mobile": true,
-        "link_color": "#000000",
-        "link_hover_color": "#000000",
-        "link_arrow_color": "#000000",
-        "link_background_color": "#e6e6e6",
-        "link_background_hover_color": "#000000",
-        "card_content_bg_color": "#f2efdd",
-        "card_title_color": "#3d081b",
-        "card_price_color": "#3d081b",
-        "arrow_color": "#ffffff",
-        "arrow_hover_color": "#ffffff",
-        "arrow_bg_color": "#ffffff",
-        "arrow_bg_hover_color": "#f2f2f2",
-        "arrow_border_color": "#c4c4c4",
-        "arrow_border_hover_color": "#c4c4c4",
-        "progress_color": "#000000",
-        "heading_color": "#3d081b",
-        "sub_heading_color": "#3d081b",
-        "background_color": "#fffcec",
-        "background_gradient": "",
-        "border_color": "#000000",
-        "margin_top": 0,
-        "margin_bottom": 0,
-        "padding_top": 36,
-        "padding_bottom": 36,
-        "padding_horizontal": 5,
-        "padding_horizontal_mobile": 1.5,
-        "full_width": true,
-        "content_width": 130,
-        "border_thickness": 0
-      }
-    },
-    "ss_featured_collection_K4HPtj": {
-      "type": "ss-featured-collection",
-      "settings": {
-        "items_mt": 40,
-        "collection": "",
-        "product_list": [
-          "america-e-tin-tin",
-          "tin-tin-bombete-jahaj",
-          "calculus-er-kando",
-          "congo-a-tintin",
-          "kaan-bhanga-murti",
-          "krishna-dweeper-rahashya",
-          "lal-bombeter-guptodhon",
-          "lohit-sagarer-hangor",
-          "otokarer-rajdondo"
-        ],
-        "stack_products": false,
-        "show_bar": false,
-        "top_bar": false,
-        "product_show": 22,
-        "product_per_desktop": 4,
-        "product_per_mobile": "1.3",
-        "image_radius": 12,
-        "image_ration": "square",
-        "use_custom_height": false,
-        "image_height_desktop": 200,
-        "image_height_mobile": 200,
-        "show_second": false,
-        "use_shadow": true,
-        "use_radius": true,
-        "card_padding_horizontal": 12,
-        "card_padding_vertical": 16,
-        "card_title_custom": true,
-        "card_title_font": "nunito_n6",
-        "card_title_size": 18,
-        "card_title_letter": 0,
-        "card_title_height": 130,
-        "heading": "Classic Books",
-        "heading_custom": true,
-        "heading_font": "asul_n7",
-        "heading_size": 46,
-        "heading_letter": 0,
-        "heading_height": 150,
-        "heading_align": "center",
-        "sub_heading": "",
-        "sub_heading_custom": false,
-        "sub_heading_font": "gluten_n4",
-        "sub_heading_size": 20,
-        "sub_heading_letter": 0.7,
-        "sub_heading_height": 200,
-        "sub_heading_align": "left",
-        "invert_content": false,
-        "link": "",
-        "link_url": "shopify://collections",
-        "link_custom": false,
-        "link_font": "assistant_n4",
-        "link_size": 28,
-        "link_letter": 1,
-        "link_height": 140,
-        "link_position": false,
-        "link_mobile": false,
-        "card_price_custom": true,
-        "card_price_font": "inter_n5",
-        "card_price_size": 16,
-        "card_price_letter": 0,
-        "card_price_height": 100,
-        "card_price_mt": 16,
-        "arrow_size": 50,
-        "arrow_size_mobile": 40,
-        "arrow_hide_mobile": true,
-        "link_color": "#000000",
-        "link_hover_color": "#000000",
-        "link_arrow_color": "#000000",
-        "link_background_color": "#e6e6e6",
-        "link_background_hover_color": "#000000",
-        "card_content_bg_color": "#f2efdd",
-        "card_title_color": "#3d081b",
-        "card_price_color": "#3d081b",
-        "arrow_color": "#ffffff",
-        "arrow_hover_color": "#ffffff",
-        "arrow_bg_color": "#ffffff",
-        "arrow_bg_hover_color": "#f2f2f2",
-        "arrow_border_color": "#c4c4c4",
-        "arrow_border_hover_color": "#c4c4c4",
-        "progress_color": "#000000",
-        "heading_color": "#3d081b",
-        "sub_heading_color": "#3d081b",
-        "background_color": "#fffcec",
-        "background_gradient": "",
-        "border_color": "#000000",
-        "margin_top": 0,
-        "margin_bottom": 0,
-        "padding_top": 36,
-        "padding_bottom": 36,
-        "padding_horizontal": 5,
-        "padding_horizontal_mobile": 1.5,
-        "full_width": true,
-        "content_width": 130,
-        "border_thickness": 0
-      }
-    },
-    "ss_feature_1_aythYE": {
-      "type": "ss-feature-1",
-      "blocks": {
-        "image_KWAP8N": {
-          "type": "image",
-          "settings": {
-            "feature_title": "Best Quality",
-            "feature_text": "Ensuring the best quality is our top priority",
-            "feature_image": "shopify://shop_images/Frame_5.svg",
-            "feature_url": "",
-            "hide_image": false
-          }
-        },
-        "image_CBXeNJ": {
-          "type": "image",
-          "settings": {
-            "feature_title": "Genuine Products",
-            "feature_text": "We source from the authentic suppliers across Bengal",
-            "feature_image": "shopify://shop_images/genuine.svg",
-            "feature_url": "",
-            "hide_image": false
-          }
-        },
-        "image_LN6a4T": {
-          "type": "image",
-          "settings": {
-            "feature_title": "Shipping Pan India",
-            "feature_text": "We deliver at your door steps across India",
-            "feature_image": "shopify://shop_images/Frame_6.svg",
-            "feature_url": "",
-            "hide_image": false
-          }
-        },
-        "image_rQDFh9": {
-          "type": "image",
-          "settings": {
-            "feature_title": "Customer Centric",
-            "feature_text": "We ensure the fastest service and best customer care",
-            "feature_image": "shopify://shop_images/Frame_8.svg",
-            "feature_url": "",
-            "hide_image": false
-          }
-        }
-      },
-      "block_order": [
-        "image_KWAP8N",
-        "image_CBXeNJ",
-        "image_LN6a4T",
-        "image_rQDFh9"
-      ],
-      "settings": {
-        "feature_row": 4,
-        "feature_row_mobile": 2,
-        "feature_gap": 20,
-        "feature_gap_mobile": 38,
-        "feature_padding_vertical": 20,
-        "feature_padding_horizontal": 24,
-        "feature_radius": 0,
-        "feature_border_thickness": 0,
-        "feature_shadow": false,
-        "feature_heading_custom": false,
-        "feature_heading_font": "inter_n4",
-        "feature_heading_size": 26,
-        "feature_heading_size_mobile": 14,
-        "feature_heading_height": 100,
-        "feature_heading_mt": 16,
-        "feature_text_custom": false,
-        "feature_text_font": "inter_n4",
-        "feature_text_size": 18,
-        "feature_text_size_mobile": 12,
-        "feature_text_height": 130,
-        "feature_text_mt": 16,
-        "feature_icon_size": 64,
-        "feature_icon_size_mobile": 48,
-        "feature_bg": "#f2efdd",
-        "feature_border_color": "#000000",
-        "feature_shadow_color": "#000000",
-        "feature_heading_color": "#b11314",
-        "feature_text_color": "#000000",
-        "feature_icon_color": "#000000",
-        "background_color": "rgba(0,0,0,0)",
-        "background_gradient": "",
-        "border_color": "#000000",
-        "margin_top": 0,
-        "margin_bottom": 24,
-        "padding_top": 0,
-        "padding_bottom": 64,
-        "padding_horizontal": 5,
-        "padding_horizontal_mobile": 1.5,
-        "full_width": false,
-        "content_width": 400,
-        "border_thickness": 0,
-        "lazy": false
       }
     },
     "ss_text_block_Pg8tfR": {
@@ -1249,10 +164,10 @@
         "text_8nQAzC": {
           "type": "text",
           "settings": {
-            "heading": "<h1>Our Partner Brands</h1>",
+            "heading": "<h1>Brands you already trust</h1>",
             "color": "#3d081b",
-            "font_size": 64,
-            "richtext": "<p>মিষ্টি, মশলা ও আরও অনেক কিছু—আমাদের সঙ্গে!</p>",
+            "font_size": 56,
+            "richtext": "<p>Mishti, masala, pantry staples, and Kolkata icons, all in one place.</p>",
             "richtext_color": "#3e0507",
             "richtext_font_size": 20
           }
@@ -1265,7 +180,7 @@
         "padding_header": 0,
         "padding_button": 0,
         "background-color": "#fffeed",
-        "padding_top": 16,
+        "padding_top": 20,
         "padding_bottom": 0,
         "section-width": 90
       }
@@ -1375,7 +290,7 @@
           "settings": {
             "image": "shopify://shop_images/UJ_Chanachoor_d3832fa6-a423-4691-bdc8-20be100ba928.jpg",
             "title": "Anirban Mitra",
-            "text": "<p>★★★★★<br/>Excellent service! Authentic Chanachur from Kalighat store. The packaging kept it fresh and tasty.</p>",
+            "text": "<p>&#9733;&#9733;&#9733;&#9733;&#9733;<br/>Excellent service! Authentic Chanachur from Kalighat store. The packaging kept it fresh and tasty.</p>",
             "link_label": "",
             "link": ""
           }
@@ -1385,7 +300,7 @@
           "settings": {
             "image": "shopify://shop_images/shop-premium-quality-aamshotto-now-at-bangla-konnection-404.png",
             "title": "Monali Sen",
-            "text": "<p>★★★★★<br/>Its just like buying from the Para'r dokan... fresh & tasty... thanx a lot banglakonnection for taking care of the prabashi</p>",
+            "text": "<p>&#9733;&#9733;&#9733;&#9733;&#9733;<br/>It feels just like buying from the para'r dokan: fresh, tasty, and packed with care for the probashi household.</p>",
             "link_label": "",
             "link": ""
           }
@@ -1395,7 +310,7 @@
           "settings": {
             "image": "shopify://shop_images/Sona_Moong_d0d8bef0-1ab9-4ba0-829a-6887bbe2adee.jpg",
             "title": "Jayshree Dasgupta",
-            "text": "<p>★★★★★<br/>The Sona Moong dal was of top quality! Really good taste and smell...perfect for khichuri along with Gobindobhog chal</p>",
+            "text": "<p>&#9733;&#9733;&#9733;&#9733;&#9733;<br/>The Sona Moong dal was top quality. Great taste, lovely aroma, and perfect for khichuri with Gobindobhog chal.</p>",
             "link_label": "",
             "link": ""
           }
@@ -1405,7 +320,7 @@
           "settings": {
             "image": "shopify://shop_images/Gobindobhog-550x550.jpg",
             "title": "Megha Guha",
-            "text": "<p>★★★★★<br/>My go to place for Gobindobhog! Absolutely delicious, earthy flavours and it gets me nostalgic everytime. The best!</p>",
+            "text": "<p>&#9733;&#9733;&#9733;&#9733;&#9733;<br/>My go-to place for Gobindobhog. Delicious, earthy, and nostalgic every single time.</p>",
             "link_label": "",
             "link": ""
           }
@@ -1415,7 +330,7 @@
           "settings": {
             "image": "shopify://shop_images/darjeeling-leaf-supreme-tea_a016304b-31ce-4fa0-ae15-e6a0bb917ddf.jpg",
             "title": "Asim Biswas",
-            "text": "<p>★★★★★<br/>This cha reminds me of the typical Kolkata cha. Thanks to Bangla Konnection I can get my bikeler cha staying away from Kolkata!</p>",
+            "text": "<p>&#9733;&#9733;&#9733;&#9733;&#9733;<br/>This cha brings back the feel of typical Kolkata tea. A lovely way to reclaim bikeler cha from afar.</p>",
             "link_label": "",
             "link": ""
           }
@@ -1425,7 +340,7 @@
           "settings": {
             "image": "shopify://shop_images/Special_Masala_482cedb1-4b66-4aa7-bdca-655dac781022.jpg",
             "title": "Rahul Dasgupta",
-            "text": "<p>★★★★★<br/>Love their entire range of boris.... This special masala bori is seasonal and I can never wait enough for the right time to order </p>",
+            "text": "<p>&#9733;&#9733;&#9733;&#9733;&#9733;<br/>Love the full range of boris. The seasonal special masala bori is something I wait for every year.</p>",
             "link_label": "",
             "link": ""
           }
@@ -1435,7 +350,7 @@
           "settings": {
             "image": "shopify://shop_images/Himsagar_9f8015bd-750d-47a1-bf8c-db1822b1256a.jpg",
             "title": "Sayan Nandi",
-            "text": "<p>★★★★★<br/>Himsagar Aam while being away from Kolkata! They packed and sent it so well and so fast! The mangoes were all fresh and in very good condition!</p>",
+            "text": "<p>&#9733;&#9733;&#9733;&#9733;&#9733;<br/>Himsagar aam away from Kolkata, packed fast and carefully. Every mango arrived fresh and in excellent shape.</p>",
             "link_label": "",
             "link": ""
           }
@@ -1445,7 +360,7 @@
           "settings": {
             "image": "shopify://shop_images/Hing_Chanachur_a9089940-92b0-47f9-850f-e30aab26cf55.jpg",
             "title": "Rahul Ghosh",
-            "text": "<p>★★★★★<br/>Ordered multiple products from their Tu Tak range of snacks and they were delicious. They taste amazing with kadak cha</p>",
+            "text": "<p>&#9733;&#9733;&#9733;&#9733;&#9733;<br/>The Tuk-Tak snack range is delicious. Perfect with kadak cha and exactly the kind of comfort I wanted.</p>",
             "link_label": "",
             "link": ""
           }
@@ -1463,7 +378,7 @@
       ],
       "custom_css": [],
       "settings": {
-        "title": "What our customers say about us",
+        "title": "What customers are saying",
         "heading_size": "h1",
         "image_width": "half",
         "image_ratio": "circle",
@@ -1476,27 +391,12 @@
         "columns_mobile": "1",
         "swipe_on_mobile": true,
         "padding_top": 28,
-        "padding_bottom": 24
+        "padding_bottom": 32
       }
     }
   },
   "order": [
-    "slideshow",
-    "slideshow_NrMHQm",
-    "hero_products_section",
-    "featured_collection_CKRgkf",
-    "ss_featured_collection_LQ4r7p",
-    "ss_featured_collection_Jr4ifh",
-    "ss_featured_collection_CDQcwG",
-    "ss_featured_collection_GMG3BP",
-    "image_with_text_RG9arT",
-    "ss_featured_collection_JYCU77",
-    "ss_text_block_mFmwXk",
-    "featured_product_YY8KMY",
-    "collection_list_DcrncK",
-    "ss_featured_collection_gBPj8p",
-    "ss_featured_collection_K4HPtj",
-    "ss_feature_1_aythYE",
+    "bk_home_revamp_TNw3fP",
     "ss_text_block_Pg8tfR",
     "marquee_images_JpgNAj",
     "multicolumn_3pQyWK"

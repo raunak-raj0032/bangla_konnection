@@ -1,0 +1,1262 @@
+{%- liquid
+  assign hero_media = section.settings.hero_image
+  assign hero_collection = section.settings.hero_collection
+
+  if hero_media == blank and hero_collection != blank and hero_collection.featured_image != blank
+    assign hero_media = hero_collection.featured_image
+  endif
+
+  if hero_media == blank
+    for block in section.blocks
+      if block.type == 'collection_card' and block.settings.collection != blank and block.settings.collection.featured_image != blank
+        assign hero_media = block.settings.collection.featured_image
+        break
+      endif
+    endfor
+  endif
+
+  assign hero_fetch_priority = 'auto'
+  if section.index == 1
+    assign hero_fetch_priority = 'high'
+  endif
+-%}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  .bk-home-{{ section.id }} {
+    position: relative;
+    overflow: hidden;
+    background:
+      radial-gradient(circle at top left, rgba(227, 158, 96, 0.28), transparent 28%),
+      radial-gradient(circle at 85% 12%, rgba(185, 21, 21, 0.15), transparent 24%),
+      linear-gradient(180deg, #fffcec 0%, #f2efdd 52%, #fff9ef 100%);
+  }
+
+  .bk-home-{{ section.id }}::before,
+  .bk-home-{{ section.id }}::after {
+    content: '';
+    position: absolute;
+    width: 28rem;
+    height: 28rem;
+    pointer-events: none;
+    opacity: 0.28;
+    background:
+      radial-gradient(circle, rgba(61, 8, 27, 0.12) 0 0.2rem, transparent 0.22rem),
+      radial-gradient(circle, rgba(185, 21, 21, 0.12) 0 0.2rem, transparent 0.22rem);
+    background-size: 1.6rem 1.6rem, 3.2rem 3.2rem;
+  }
+
+  .bk-home-{{ section.id }}::before {
+    top: -10rem;
+    right: -9rem;
+    border-radius: 50%;
+  }
+
+  .bk-home-{{ section.id }}::after {
+    bottom: -14rem;
+    left: -10rem;
+    border-radius: 50%;
+  }
+
+  .bk-home__shell-{{ section.id }} {
+    position: relative;
+    z-index: 1;
+  }
+
+  .bk-home__hero-{{ section.id }} {
+    display: grid;
+    gap: 2.8rem;
+    align-items: center;
+  }
+
+  .bk-home__intro-{{ section.id }} {
+    display: grid;
+    gap: 1.6rem;
+  }
+
+  .bk-home__eyebrow-{{ section.id }} {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    width: fit-content;
+    margin: 0;
+    padding: 0.7rem 1.3rem;
+    border: 1px solid rgba(61, 8, 27, 0.18);
+    border-radius: 999px;
+    background: rgba(255, 252, 236, 0.72);
+    color: #8f1d20;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 0.18rem;
+    text-transform: uppercase;
+    backdrop-filter: blur(12px);
+  }
+
+  .bk-home__eyebrow-{{ section.id }}::before {
+    content: '';
+    width: 0.8rem;
+    height: 0.8rem;
+    border-radius: 50%;
+    background: #b91515;
+    box-shadow: 0 0 0 0.3rem rgba(185, 21, 21, 0.14);
+  }
+
+  .bk-home__title-{{ section.id }} {
+    margin: 0;
+    max-width: 14ch;
+    color: #3d081b;
+    font-size: clamp(3.8rem, 7vw, 7rem);
+    line-height: 0.96;
+    letter-spacing: -0.08rem;
+  }
+
+  .bk-home__copy-{{ section.id }} {
+    max-width: 58rem;
+    color: rgba(61, 8, 27, 0.82);
+    font-size: 1.7rem;
+    line-height: 1.7;
+  }
+
+  .bk-home__copy-{{ section.id }} p {
+    margin: 0;
+  }
+
+  .bk-home__actions-{{ section.id }} {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .bk-home__actions-{{ section.id }} .button--secondary {
+    background: rgba(255, 252, 236, 0.2);
+  }
+
+  .bk-home__stats-{{ section.id }} {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .bk-home__stat-{{ section.id }} {
+    padding: 1.5rem 1.6rem;
+    border: 1px solid rgba(61, 8, 27, 0.12);
+    border-radius: 2rem;
+    background: rgba(255, 252, 236, 0.68);
+    box-shadow: 0 1.4rem 3rem rgba(61, 8, 27, 0.07);
+  }
+
+  .bk-home__stat-value-{{ section.id }} {
+    display: block;
+    margin-bottom: 0.4rem;
+    color: #3d081b;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  .bk-home__stat-label-{{ section.id }} {
+    display: block;
+    color: rgba(61, 8, 27, 0.7);
+    font-size: 1.25rem;
+    line-height: 1.5;
+  }
+
+  .bk-home__visual-{{ section.id }} {
+    position: relative;
+    display: grid;
+    gap: 1.8rem;
+  }
+
+  .bk-home__visual-frame-{{ section.id }} {
+    position: relative;
+    overflow: hidden;
+    min-height: 42rem;
+    border: 1px solid rgba(61, 8, 27, 0.12);
+    border-radius: 3rem;
+    background:
+      linear-gradient(180deg, rgba(255, 252, 236, 0.1), rgba(255, 252, 236, 0.85)),
+      #e39e60;
+    box-shadow: 0 2.4rem 6rem rgba(61, 8, 27, 0.14);
+  }
+
+  .bk-home__visual-frame-{{ section.id }}::before {
+    content: '';
+    position: absolute;
+    inset: 2rem;
+    border: 1px solid rgba(255, 252, 236, 0.32);
+    border-radius: 2.2rem;
+    pointer-events: none;
+  }
+
+  .bk-home__visual-media-{{ section.id }} {
+    position: absolute;
+    inset: 0;
+  }
+
+  .bk-home__visual-media-{{ section.id }} img,
+  .bk-home__visual-media-{{ section.id }} svg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .bk-home__visual-overlay-{{ section.id }} {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(180deg, rgba(61, 8, 27, 0.06) 0%, rgba(61, 8, 27, 0.18) 45%, rgba(61, 8, 27, 0.7) 100%),
+      linear-gradient(90deg, rgba(61, 8, 27, 0.2), transparent 55%);
+  }
+
+  .bk-home__visual-card-{{ section.id }} {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    gap: 1rem;
+    align-self: end;
+    max-width: 34rem;
+    margin: 0 2rem 2rem auto;
+    padding: 1.8rem;
+    border: 1px solid rgba(255, 252, 236, 0.2);
+    border-radius: 2.2rem;
+    background: rgba(61, 8, 27, 0.78);
+    color: #fffcec;
+    backdrop-filter: blur(18px);
+  }
+
+  .bk-home__visual-card-{{ section.id }} p {
+    margin: 0;
+    color: rgba(255, 252, 236, 0.84);
+    font-size: 1.45rem;
+    line-height: 1.65;
+  }
+
+  .bk-home__visual-card-badge-{{ section.id }} {
+    display: inline-flex;
+    width: fit-content;
+    padding: 0.55rem 0.95rem;
+    border-radius: 999px;
+    background: rgba(255, 252, 236, 0.12);
+    color: #f9d483;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.16rem;
+    text-transform: uppercase;
+  }
+
+  .bk-home__visual-card-{{ section.id }} h2 {
+    margin: 0;
+    color: #fffcec;
+    font-size: clamp(2.2rem, 4vw, 3.2rem);
+    line-height: 1.05;
+  }
+
+  .bk-home__chip-row-{{ section.id }} {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.9rem;
+  }
+
+  .bk-home__chip-{{ section.id }} {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7rem;
+    padding: 0.85rem 1.2rem;
+    border-radius: 999px;
+    background: rgba(255, 252, 236, 0.85);
+    color: #3d081b;
+    font-size: 1.25rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform 0.25s ease, background-color 0.25s ease;
+  }
+
+  .bk-home__chip-{{ section.id }}::before {
+    content: '';
+    width: 0.7rem;
+    height: 0.7rem;
+    border-radius: 50%;
+    background: #b91515;
+  }
+
+  .bk-home__chip-{{ section.id }}:hover {
+    transform: translateY(-0.2rem);
+    background: #fffcec;
+  }
+
+  .bk-home__cluster-{{ section.id }} {
+    display: grid;
+    gap: 3.2rem;
+    margin-top: 5.4rem;
+  }
+
+  .bk-home__section-top-{{ section.id }} {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem 2rem;
+    align-items: end;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+  }
+
+  .bk-home__section-label-{{ section.id }} {
+    display: block;
+    margin-bottom: 0.8rem;
+    color: #8f1d20;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 0.18rem;
+    text-transform: uppercase;
+  }
+
+  .bk-home__section-top-{{ section.id }} h2 {
+    margin: 0;
+    max-width: 18ch;
+    color: #3d081b;
+    font-size: clamp(2.8rem, 5vw, 4.6rem);
+    line-height: 1.02;
+  }
+
+  .bk-home__section-top-{{ section.id }} p {
+    margin: 0;
+    max-width: 44rem;
+    color: rgba(61, 8, 27, 0.76);
+    font-size: 1.5rem;
+    line-height: 1.7;
+  }
+
+  .bk-home__collection-grid-{{ section.id }} {
+    display: grid;
+    gap: 1.6rem;
+  }
+
+  .bk-home__collection-card-{{ section.id }} {
+    position: relative;
+    display: grid;
+    gap: 1.5rem;
+    min-height: 28rem;
+    padding: 1.8rem;
+    border: 1px solid rgba(61, 8, 27, 0.12);
+    border-radius: 2.4rem;
+    background: linear-gradient(180deg, rgba(255, 252, 236, 0.55), rgba(242, 239, 221, 0.95));
+    color: #3d081b;
+    text-decoration: none;
+    overflow: hidden;
+    box-shadow: 0 1.8rem 4rem rgba(61, 8, 27, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .bk-home__collection-card-{{ section.id }}:hover {
+    transform: translateY(-0.5rem);
+    box-shadow: 0 2.4rem 4.4rem rgba(61, 8, 27, 0.12);
+  }
+
+  .bk-home__collection-card-{{ section.id }}::after {
+    content: '';
+    position: absolute;
+    inset: auto -4rem -6rem auto;
+    width: 16rem;
+    height: 16rem;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(227, 158, 96, 0.45), rgba(227, 158, 96, 0));
+  }
+
+  .bk-home__collection-tag-{{ section.id }} {
+    position: relative;
+    z-index: 1;
+    display: inline-flex;
+    width: fit-content;
+    padding: 0.55rem 0.95rem;
+    border-radius: 999px;
+    background: rgba(61, 8, 27, 0.08);
+    color: #8f1d20;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.16rem;
+    text-transform: uppercase;
+  }
+
+  .bk-home__collection-media-{{ section.id }} {
+    position: absolute;
+    inset: 0;
+    opacity: 0.22;
+  }
+
+  .bk-home__collection-media-{{ section.id }} img,
+  .bk-home__collection-media-{{ section.id }} svg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .bk-home__collection-content-{{ section.id }} {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    gap: 1rem;
+    margin-top: auto;
+  }
+
+  .bk-home__collection-content-{{ section.id }} h3 {
+    margin: 0;
+    font-size: 2.4rem;
+    line-height: 1.05;
+  }
+
+  .bk-home__collection-content-{{ section.id }} p {
+    margin: 0;
+    max-width: 26rem;
+    color: rgba(61, 8, 27, 0.78);
+    font-size: 1.4rem;
+    line-height: 1.65;
+  }
+
+  .bk-home__collection-meta-{{ section.id }} {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 0.6rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+
+  .bk-home__product-grid-{{ section.id }} {
+    display: grid;
+    gap: 1.6rem;
+  }
+
+  .bk-home__product-card-{{ section.id }} {
+    display: grid;
+    gap: 1.6rem;
+    padding: 1.6rem;
+    border: 1px solid rgba(61, 8, 27, 0.12);
+    border-radius: 2.4rem;
+    background: rgba(255, 252, 236, 0.78);
+    box-shadow: 0 1.8rem 4rem rgba(61, 8, 27, 0.08);
+  }
+
+  .bk-home__product-card-{{ section.id }}.is-featured {
+    background:
+      linear-gradient(135deg, rgba(227, 158, 96, 0.17), rgba(255, 252, 236, 0.92)),
+      rgba(255, 252, 236, 0.95);
+  }
+
+  .bk-home__product-media-{{ section.id }} {
+    overflow: hidden;
+    border-radius: 2rem;
+    background: #f2efdd;
+    aspect-ratio: 1 / 1;
+  }
+
+  .bk-home__product-card-{{ section.id }}.is-featured .bk-home__product-media-{{ section.id }} {
+    aspect-ratio: 1.2 / 1;
+  }
+
+  .bk-home__product-media-{{ section.id }} img,
+  .bk-home__product-media-{{ section.id }} svg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+
+  .bk-home__product-card-{{ section.id }}:hover .bk-home__product-media-{{ section.id }} img {
+    transform: scale(1.04);
+  }
+
+  .bk-home__product-copy-{{ section.id }} {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .bk-home__product-kicker-{{ section.id }} {
+    display: inline-flex;
+    width: fit-content;
+    padding: 0.45rem 0.9rem;
+    border-radius: 999px;
+    background: rgba(185, 21, 21, 0.1);
+    color: #8f1d20;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.14rem;
+    text-transform: uppercase;
+  }
+
+  .bk-home__product-copy-{{ section.id }} h3 {
+    margin: 0;
+    color: #3d081b;
+    font-size: 2.4rem;
+    line-height: 1.08;
+  }
+
+  .bk-home__product-copy-{{ section.id }} p {
+    margin: 0;
+    color: rgba(61, 8, 27, 0.74);
+    font-size: 1.42rem;
+    line-height: 1.7;
+  }
+
+  .bk-home__product-meta-{{ section.id }} {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .bk-home__product-price-{{ section.id }} {
+    color: #3d081b;
+    font-size: 1.8rem;
+    font-weight: 700;
+  }
+
+  .bk-home__product-compare-{{ section.id }} {
+    color: rgba(61, 8, 27, 0.45);
+    font-size: 1.3rem;
+    text-decoration: line-through;
+  }
+
+  .bk-home__story-{{ section.id }} {
+    display: grid;
+    gap: 1.8rem;
+    padding: 2rem;
+    border: 1px solid rgba(61, 8, 27, 0.12);
+    border-radius: 3rem;
+    background:
+      linear-gradient(120deg, rgba(61, 8, 27, 0.96), rgba(143, 29, 32, 0.9)),
+      #3d081b;
+    color: #fffcec;
+    box-shadow: 0 2.4rem 5rem rgba(61, 8, 27, 0.14);
+  }
+
+  .bk-home__story-copy-{{ section.id }} {
+    display: grid;
+    gap: 1.2rem;
+  }
+
+  .bk-home__story-copy-{{ section.id }} h2,
+  .bk-home__story-copy-{{ section.id }} p,
+  .bk-home__story-copy-{{ section.id }} .rte {
+    margin: 0;
+  }
+
+  .bk-home__story-copy-{{ section.id }} h2 {
+    max-width: 16ch;
+    font-size: clamp(2.8rem, 5vw, 4.4rem);
+    line-height: 1.02;
+    color: #fffcec;
+  }
+
+  .bk-home__story-copy-{{ section.id }} .rte {
+    max-width: 54rem;
+    color: rgba(255, 252, 236, 0.84);
+    font-size: 1.55rem;
+    line-height: 1.75;
+  }
+
+  .bk-home__story-quote-{{ section.id }} {
+    margin: 0;
+    padding-left: 1.8rem;
+    border-left: 2px solid rgba(249, 212, 131, 0.5);
+    color: #f9d483;
+    font-size: 1.45rem;
+    font-weight: 600;
+    line-height: 1.7;
+  }
+
+  .bk-home__story-notes-{{ section.id }} {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .bk-home__story-note-{{ section.id }} {
+    padding: 1.5rem;
+    border: 1px solid rgba(255, 252, 236, 0.12);
+    border-radius: 2rem;
+    background: rgba(255, 252, 236, 0.06);
+    backdrop-filter: blur(10px);
+  }
+
+  .bk-home__story-note-{{ section.id }} h3,
+  .bk-home__story-note-{{ section.id }} p {
+    margin: 0;
+  }
+
+  .bk-home__story-note-{{ section.id }} h3 {
+    margin-bottom: 0.7rem;
+    color: #fffcec;
+    font-size: 1.7rem;
+  }
+
+  .bk-home__story-note-{{ section.id }} p {
+    color: rgba(255, 252, 236, 0.8);
+    font-size: 1.35rem;
+    line-height: 1.65;
+  }
+
+  .bk-home__inline-link-{{ section.id }} {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    width: fit-content;
+    color: inherit;
+    font-size: 1.3rem;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .bk-home__inline-link-{{ section.id }} .icon-arrow {
+    width: 1.4rem;
+    height: auto;
+    transition: transform 0.25s ease;
+  }
+
+  .bk-home__inline-link-{{ section.id }}:hover .icon-arrow {
+    transform: translateX(0.25rem);
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+
+    .bk-home__collection-grid-{{ section.id }} {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .bk-home__product-grid-{{ section.id }} {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .bk-home__product-card-{{ section.id }}.is-featured {
+      grid-column: span 2;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      align-items: center;
+    }
+
+    .bk-home__story-notes-{{ section.id }} {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  @media screen and (min-width: 990px) {
+    .bk-home__hero-{{ section.id }} {
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+      gap: 4rem;
+    }
+
+    .bk-home__cluster-{{ section.id }} {
+      margin-top: 7rem;
+      gap: 4.4rem;
+    }
+
+    .bk-home__collection-grid-{{ section.id }} {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .bk-home__story-{{ section.id }} {
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+      align-items: start;
+      padding: 2.4rem;
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .bk-home__title-{{ section.id }} {
+      max-width: 100%;
+    }
+
+    .bk-home__stats-{{ section.id }} {
+      grid-template-columns: 1fr;
+    }
+
+    .bk-home__visual-frame-{{ section.id }} {
+      min-height: 34rem;
+    }
+
+    .bk-home__visual-card-{{ section.id }} {
+      max-width: none;
+      margin: 0 1.4rem 1.4rem;
+    }
+
+    .bk-home__section-top-{{ section.id }} h2 {
+      max-width: 100%;
+    }
+
+    .bk-home__collection-card-{{ section.id }},
+    .bk-home__product-card-{{ section.id }},
+    .bk-home__story-{{ section.id }} {
+      border-radius: 2.2rem;
+    }
+  }
+{%- endstyle -%}
+
+<section class="bk-home-{{ section.id }} color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
+  <div class="page-width bk-home__shell-{{ section.id }}">
+    <div class="bk-home__hero-{{ section.id }}">
+      <div class="bk-home__intro-{{ section.id }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+        {%- if section.settings.eyebrow != blank -%}
+          <p class="bk-home__eyebrow-{{ section.id }}">{{ section.settings.eyebrow | escape }}</p>
+        {%- endif -%}
+
+        {%- if section.settings.heading != blank -%}
+          <h1 class="bk-home__title-{{ section.id }}">{{ section.settings.heading }}</h1>
+        {%- endif -%}
+
+        {%- if section.settings.text != blank -%}
+          <div class="bk-home__copy-{{ section.id }} rte">{{ section.settings.text }}</div>
+        {%- endif -%}
+
+        <div class="bk-home__actions-{{ section.id }}">
+          {%- if section.settings.primary_button_label != blank -%}
+            <a href="{% if section.settings.primary_button_link != blank %}{{ section.settings.primary_button_link }}{% else %}{{ routes.collections_url }}{% endif %}" class="button">
+              {{ section.settings.primary_button_label | escape }}
+            </a>
+          {%- endif -%}
+
+          {%- if section.settings.secondary_button_label != blank -%}
+            <a href="{% if section.settings.secondary_button_link != blank %}{{ section.settings.secondary_button_link }}{% else %}{{ routes.all_products_collection_url }}{% endif %}" class="button button--secondary">
+              {{ section.settings.secondary_button_label | escape }}
+            </a>
+          {%- endif -%}
+        </div>
+
+        <div class="bk-home__stats-{{ section.id }}">
+          {%- if section.settings.stat_1_value != blank or section.settings.stat_1_label != blank -%}
+            <div class="bk-home__stat-{{ section.id }}">
+              <span class="bk-home__stat-value-{{ section.id }}">{{ section.settings.stat_1_value | escape }}</span>
+              <span class="bk-home__stat-label-{{ section.id }}">{{ section.settings.stat_1_label | escape }}</span>
+            </div>
+          {%- endif -%}
+
+          {%- if section.settings.stat_2_value != blank or section.settings.stat_2_label != blank -%}
+            <div class="bk-home__stat-{{ section.id }}">
+              <span class="bk-home__stat-value-{{ section.id }}">{{ section.settings.stat_2_value | escape }}</span>
+              <span class="bk-home__stat-label-{{ section.id }}">{{ section.settings.stat_2_label | escape }}</span>
+            </div>
+          {%- endif -%}
+
+          {%- if section.settings.stat_3_value != blank or section.settings.stat_3_label != blank -%}
+            <div class="bk-home__stat-{{ section.id }}">
+              <span class="bk-home__stat-value-{{ section.id }}">{{ section.settings.stat_3_value | escape }}</span>
+              <span class="bk-home__stat-label-{{ section.id }}">{{ section.settings.stat_3_label | escape }}</span>
+            </div>
+          {%- endif -%}
+        </div>
+      </div>
+
+      <div class="bk-home__visual-{{ section.id }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+        <div class="bk-home__visual-frame-{{ section.id }}">
+          <div class="bk-home__visual-media-{{ section.id }}">
+            {%- if hero_media != blank -%}
+              {{
+                hero_media
+                | image_url: width: 1400
+                | image_tag:
+                  widths: '480, 720, 960, 1280, 1400',
+                  sizes: '(min-width: 990px) 42vw, 100vw',
+                  fetchpriority: hero_fetch_priority
+              }}
+            {%- else -%}
+              {{ 'collection-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
+            {%- endif -%}
+          </div>
+          <div class="bk-home__visual-overlay-{{ section.id }}"></div>
+
+          <div class="bk-home__visual-card-{{ section.id }}">
+            {%- if section.settings.hero_card_badge != blank -%}
+              <span class="bk-home__visual-card-badge-{{ section.id }}">{{ section.settings.hero_card_badge | escape }}</span>
+            {%- endif -%}
+
+            <h2>
+              {%- if hero_collection != blank -%}
+                {{ hero_collection.title }}
+              {%- elsif section.settings.hero_card_title != blank -%}
+                {{ section.settings.hero_card_title }}
+              {%- else -%}
+                A softer, richer way to browse Bengal
+              {%- endif -%}
+            </h2>
+
+            <p>
+              {%- if hero_collection != blank and hero_collection.description != blank -%}
+                {{ hero_collection.description | strip_html | truncatewords: 20 }}
+              {%- elsif section.settings.hero_card_text != blank -%}
+                {{ section.settings.hero_card_text }}
+              {%- else -%}
+                Thoughtful picks for mishti runs, pantry restocks, and gifts that feel unmistakably from home.
+              {%- endif -%}
+            </p>
+
+            {%- if hero_collection != blank -%}
+              <a href="{{ hero_collection.url }}" class="bk-home__inline-link-{{ section.id }}">
+                Browse {{ hero_collection.title }}
+                {% render 'icon-arrow' %}
+              </a>
+            {%- elsif section.settings.hero_card_link != blank and section.settings.hero_card_link_label != blank -%}
+              <a href="{{ section.settings.hero_card_link }}" class="bk-home__inline-link-{{ section.id }}">
+                {{ section.settings.hero_card_link_label | escape }}
+                {% render 'icon-arrow' %}
+              </a>
+            {%- endif -%}
+          </div>
+        </div>
+
+        <div class="bk-home__chip-row-{{ section.id }}">
+          {%- assign chip_count = 0 -%}
+          {%- for block in section.blocks -%}
+            {%- if block.type == 'collection_card' and block.settings.collection != blank and chip_count < 3 -%}
+              <a href="{{ block.settings.collection.url }}" class="bk-home__chip-{{ section.id }}" {{ block.shopify_attributes }}>
+                {%- if block.settings.tag != blank -%}
+                  {{ block.settings.tag | escape }}
+                {%- else -%}
+                  {{ block.settings.collection.title }}
+                {%- endif -%}
+              </a>
+              {%- assign chip_count = chip_count | plus: 1 -%}
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+      </div>
+    </div>
+
+    <div class="bk-home__cluster-{{ section.id }}">
+      <div>
+        <div class="bk-home__section-top-{{ section.id }}">
+          <div>
+            <span class="bk-home__section-label-{{ section.id }}">Aisles With Personality</span>
+            <h2>Explore the pantry, sweet shop, and classics in a single sweep.</h2>
+          </div>
+          <p>Each collection keeps the familiar Bangla warmth, but the browsing flow is cleaner, more editorial, and easier to scan on mobile.</p>
+        </div>
+
+        <div class="bk-home__collection-grid-{{ section.id }}">
+          {%- assign collection_count = 0 -%}
+          {%- for block in section.blocks -%}
+            {%- if block.type == 'collection_card' and block.settings.collection != blank -%}
+              {%- assign collection_count = collection_count | plus: 1 -%}
+              <a
+                href="{{ block.settings.collection.url }}"
+                class="bk-home__collection-card-{{ section.id }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+                {{ block.shopify_attributes }}
+                {% if settings.animations_reveal_on_scroll %}
+                  data-cascade
+                  style="--animation-order: {{ collection_count }};"
+                {% endif %}
+              >
+                <div class="bk-home__collection-media-{{ section.id }}">
+                  {%- if block.settings.collection.featured_image != blank -%}
+                    {{
+                      block.settings.collection.featured_image
+                      | image_url: width: 900
+                      | image_tag:
+                        widths: '320, 480, 720, 900',
+                        sizes: '(min-width: 990px) 28vw, (min-width: 750px) 48vw, 100vw'
+                    }}
+                  {%- else -%}
+                    {{ 'collection-apparel-2' | placeholder_svg_tag: 'placeholder-svg' }}
+                  {%- endif -%}
+                </div>
+
+                {%- if block.settings.tag != blank -%}
+                  <span class="bk-home__collection-tag-{{ section.id }}">{{ block.settings.tag | escape }}</span>
+                {%- endif -%}
+
+                <div class="bk-home__collection-content-{{ section.id }}">
+                  <h3>{{ block.settings.collection.title }}</h3>
+
+                  <p>
+                    {%- if block.settings.copy != blank -%}
+                      {{ block.settings.copy | escape }}
+                    {%- elsif block.settings.collection.description != blank -%}
+                      {{ block.settings.collection.description | strip_html | truncatewords: 18 }}
+                    {%- else -%}
+                      Handpicked finds with the same Bangla Konnection color story and a calmer, more premium browsing rhythm.
+                    {%- endif -%}
+                  </p>
+
+                  <div class="bk-home__collection-meta-{{ section.id }}">
+                    <span>{{ block.settings.collection.all_products_count }} products</span>
+                    <span>View collection</span>
+                  </div>
+                </div>
+              </a>
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+      </div>
+
+      <div>
+        <div class="bk-home__section-top-{{ section.id }}">
+          <div>
+            <span class="bk-home__section-label-{{ section.id }}">Curated Picks</span>
+            <h2>Signature picks with a little nostalgia and a much cleaner visual rhythm.</h2>
+          </div>
+          <p>Featured products are spaced out like highlights instead of crowded carousels, so the homepage feels more premium and easier to trust.</p>
+        </div>
+
+        <div class="bk-home__product-grid-{{ section.id }}">
+          {%- assign spotlight_count = 0 -%}
+          {%- for block in section.blocks -%}
+            {%- if block.type == 'spotlight_product' and block.settings.product != blank -%}
+              {%- assign spotlight_count = spotlight_count | plus: 1 -%}
+              <article
+                class="bk-home__product-card-{{ section.id }}{% if spotlight_count == 1 %} is-featured{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+                {{ block.shopify_attributes }}
+                {% if settings.animations_reveal_on_scroll %}
+                  data-cascade
+                  style="--animation-order: {{ spotlight_count }};"
+                {% endif %}
+              >
+                <a href="{{ block.settings.product.url }}" class="bk-home__product-media-{{ section.id }}">
+                  {%- if block.settings.product.featured_media != blank -%}
+                    {{
+                      block.settings.product.featured_media
+                      | image_url: width: 900
+                      | image_tag:
+                        widths: '320, 480, 720, 900',
+                        sizes: '(min-width: 990px) 32vw, (min-width: 750px) 48vw, 100vw'
+                    }}
+                  {%- else -%}
+                    {{ 'product-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
+                  {%- endif -%}
+                </a>
+
+                <div class="bk-home__product-copy-{{ section.id }}">
+                  {%- if block.settings.kicker != blank -%}
+                    <span class="bk-home__product-kicker-{{ section.id }}">{{ block.settings.kicker | escape }}</span>
+                  {%- endif -%}
+
+                  <h3><a href="{{ block.settings.product.url }}" class="full-unstyled-link">{{ block.settings.product.title }}</a></h3>
+
+                  <p>
+                    {%- if block.settings.copy != blank -%}
+                      {{ block.settings.copy | escape }}
+                    {%- elsif block.settings.product.description != blank -%}
+                      {{ block.settings.product.description | strip_html | truncatewords: 20 }}
+                    {%- else -%}
+                      A homepage highlight that feels premium and easy to scan.
+                    {%- endif -%}
+                  </p>
+
+                  <div class="bk-home__product-meta-{{ section.id }}">
+                    <div>
+                      <span class="bk-home__product-price-{{ section.id }}">{{ block.settings.product.price | money }}</span>
+                      {%- if block.settings.product.compare_at_price > block.settings.product.price -%}
+                        <span class="bk-home__product-compare-{{ section.id }}">{{ block.settings.product.compare_at_price | money }}</span>
+                      {%- endif -%}
+                    </div>
+
+                    <a href="{{ block.settings.product.url }}" class="bk-home__inline-link-{{ section.id }}">
+                      View product
+                      {% render 'icon-arrow' %}
+                    </a>
+                  </div>
+                </div>
+              </article>
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+      </div>
+
+      <div class="bk-home__story-{{ section.id }}">
+        <div class="bk-home__story-copy-{{ section.id }}">
+          <span class="bk-home__section-label-{{ section.id }}" style="color:#f9d483;">Soft Bengali Cues</span>
+          <h2>{{ section.settings.story_heading }}</h2>
+          <div class="rte">{{ section.settings.story_text }}</div>
+
+          {%- if section.settings.story_quote != blank -%}
+            <p class="bk-home__story-quote-{{ section.id }}">{{ section.settings.story_quote | escape }}</p>
+          {%- endif -%}
+        </div>
+
+        <div class="bk-home__story-notes-{{ section.id }}">
+          {%- for block in section.blocks -%}
+            {%- if block.type == 'trust_note' -%}
+              <div class="bk-home__story-note-{{ section.id }}" {{ block.shopify_attributes }}>
+                <h3>{{ block.settings.title | escape }}</h3>
+                <p>{{ block.settings.text | escape }}</p>
+              </div>
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "BK Home Revamp",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Ghorer shad, redesigned"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "A modern Bangla marketplace with the warmth still intact."
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Intro text",
+      "default": "<p>Bring sweets, pantry staples, snacks, and Kolkata favorites into one calmer, more premium homepage flow that still feels unmistakably Bangla Konnection.</p>"
+    },
+    {
+      "type": "text",
+      "id": "primary_button_label",
+      "label": "Primary button label",
+      "default": "Shop collections"
+    },
+    {
+      "type": "url",
+      "id": "primary_button_link",
+      "label": "Primary button link"
+    },
+    {
+      "type": "text",
+      "id": "secondary_button_label",
+      "label": "Secondary button label",
+      "default": "See what's trending"
+    },
+    {
+      "type": "url",
+      "id": "secondary_button_link",
+      "label": "Secondary button link"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Hero image"
+    },
+    {
+      "type": "collection",
+      "id": "hero_collection",
+      "label": "Hero collection"
+    },
+    {
+      "type": "text",
+      "id": "hero_card_badge",
+      "label": "Hero card badge",
+      "default": "Curated edit"
+    },
+    {
+      "type": "text",
+      "id": "hero_card_title",
+      "label": "Hero card title",
+      "default": "Taste that feels like home"
+    },
+    {
+      "type": "text",
+      "id": "hero_card_text",
+      "label": "Hero card text",
+      "default": "Thoughtful picks for mishti cravings, pantry restocks, and gifting."
+    },
+    {
+      "type": "text",
+      "id": "hero_card_link_label",
+      "label": "Hero card link label",
+      "default": "Browse the edit"
+    },
+    {
+      "type": "url",
+      "id": "hero_card_link",
+      "label": "Hero card link"
+    },
+    {
+      "type": "text",
+      "id": "stat_1_value",
+      "label": "Stat 1 value",
+      "default": "6+ aisles"
+    },
+    {
+      "type": "text",
+      "id": "stat_1_label",
+      "label": "Stat 1 label",
+      "default": "Sweets, pantry, snacks, tea, vegetables, and more"
+    },
+    {
+      "type": "text",
+      "id": "stat_2_value",
+      "label": "Stat 2 value",
+      "default": "Pan-India"
+    },
+    {
+      "type": "text",
+      "id": "stat_2_label",
+      "label": "Stat 2 label",
+      "default": "Shipping that supports the modern Bengali household"
+    },
+    {
+      "type": "text",
+      "id": "stat_3_value",
+      "label": "Stat 3 value",
+      "default": "Authentic"
+    },
+    {
+      "type": "text",
+      "id": "stat_3_label",
+      "label": "Stat 3 label",
+      "default": "Beloved brands, iconic ingredients, and familiar comforts"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "story_heading",
+      "label": "Story heading",
+      "default": "A cleaner homepage, still rooted in Bengal."
+    },
+    {
+      "type": "richtext",
+      "id": "story_text",
+      "label": "Story text",
+      "default": "<p>The refreshed layout keeps the same maroon, cream, and saffron palette, but introduces more breathing room, softer layering, and a subtle editorial feel. The Bengali hint comes through in the warmth, the storytelling, and the ornamental details instead of making the page feel costume-like.</p>"
+    },
+    {
+      "type": "text",
+      "id": "story_quote",
+      "label": "Story quote",
+      "default": "Ghorer shad, with a sleeker city rhythm."
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 56
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collection_card",
+      "name": "Collection card",
+      "limit": 6,
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection"
+        },
+        {
+          "type": "text",
+          "id": "tag",
+          "label": "Tag",
+          "default": "Collection"
+        },
+        {
+          "type": "text",
+          "id": "copy",
+          "label": "Short copy",
+          "default": "A calmer, more curated way to browse this category."
+        }
+      ]
+    },
+    {
+      "type": "spotlight_product",
+      "name": "Spotlight product",
+      "limit": 4,
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        },
+        {
+          "type": "text",
+          "id": "kicker",
+          "label": "Kicker",
+          "default": "Signature pick"
+        },
+        {
+          "type": "text",
+          "id": "copy",
+          "label": "Short copy",
+          "default": "A homepage highlight that feels premium and easy to scan."
+        }
+      ]
+    },
+    {
+      "type": "trust_note",
+      "name": "Trust note",
+      "limit": 3,
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Authentically sourced"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Products chosen for familiarity, quality, and dependable delivery."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "BK Home Revamp",
+      "blocks": [
+        {
+          "type": "collection_card"
+        },
+        {
+          "type": "collection_card"
+        },
+        {
+          "type": "collection_card"
+        },
+        {
+          "type": "spotlight_product"
+        },
+        {
+          "type": "spotlight_product"
+        },
+        {
+          "type": "trust_note"
+        },
+        {
+          "type": "trust_note"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
