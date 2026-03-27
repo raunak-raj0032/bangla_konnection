@@ -28,149 +28,15 @@
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
   }
 
-  .bk-collection-grid-{{ section.id }} {
-    position: relative;
-  }
-
-  .bk-collection-grid-{{ section.id }} .facets-wrapper {
-    margin-bottom: 1.8rem;
-  }
-
-  .bk-collection-grid-{{ section.id }} .facets-container,
-  .bk-collection-grid-{{ section.id }} .facets-wrapper > * {
-    border-radius: 2.6rem;
-  }
-
-  .bk-collection-grid-{{ section.id }} .facets-container {
-    padding: 1.2rem 1.4rem;
-    border: 0.1rem solid rgba(95, 39, 44, 0.1);
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(242, 239, 221, 0.9));
-    box-shadow: 0 1.4rem 3rem rgba(95, 39, 44, 0.06);
-  }
-
-  .bk-collection-grid-{{ section.id }} .facets__summary,
-  .bk-collection-grid-{{ section.id }} .facet-filters__sort,
-  .bk-collection-grid-{{ section.id }} .mobile-facets__open-label {
-    border-radius: 999px;
-    background: rgba(255, 255, 255, 0.86);
-    border: 0.1rem solid rgba(95, 39, 44, 0.1);
-  }
-
-  .bk-collection-grid-{{ section.id }} .active-facets__button-inner,
-  .bk-collection-grid-{{ section.id }} .active-facets__button-remove {
-    border-radius: 999px;
-  }
-
-  .bk-collection-grid-{{ section.id }} .product-grid-container > .collection {
-    padding: clamp(1.4rem, 2vw, 2rem);
-    border: 0.1rem solid rgba(95, 39, 44, 0.1);
-    border-radius: 3rem;
-    background:
-      radial-gradient(circle at top right, rgba(227, 158, 96, 0.12), transparent 35%),
-      linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(242, 239, 221, 0.92));
-    box-shadow: 0 2rem 4.8rem rgba(95, 39, 44, 0.07);
-  }
-
-  .bk-collection-grid-{{ section.id }} #product-grid {
-    gap: 1.8rem;
-  }
-
-  .bk-collection-grid-{{ section.id }} .product-grid > .grid__item {
-    display: flex;
-  }
-
-  .bk-collection-grid-{{ section.id }} .product-grid .card-wrapper {
-    width: 100%;
-  }
-
-  .bk-collection-grid-{{ section.id }} .product-grid .card {
-    height: 100%;
-    overflow: hidden;
-    border: 0.1rem solid rgba(95, 39, 44, 0.1);
-    border-radius: 2.4rem;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.97), rgba(248, 242, 232, 0.94));
-    box-shadow: 0 1.4rem 3.2rem rgba(95, 39, 44, 0.06);
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-  }
-
-  .bk-collection-grid-{{ section.id }} .product-grid .card:hover {
-    transform: translateY(-0.3rem);
-    box-shadow: 0 2rem 3.8rem rgba(95, 39, 44, 0.1);
-  }
-
-  .bk-collection-grid-{{ section.id }} .product-grid .card__inner,
-  .bk-collection-grid-{{ section.id }} .product-grid .card__media,
-  .bk-collection-grid-{{ section.id }} .product-grid .media {
-    border-radius: 2rem 2rem 0 0;
-    overflow: hidden;
-  }
-
-  .bk-collection-grid-{{ section.id }} .product-grid .card__content {
-    padding: 0 1.5rem 1.6rem;
-  }
-
-  .bk-collection-grid-{{ section.id }} .product-grid .card__information {
-    display: grid;
-    gap: 0.7rem;
-  }
-
-  .bk-collection-grid-{{ section.id }} .product-grid .card__heading {
-    margin: 0;
-  }
-
-  .bk-collection-grid-{{ section.id }} .product-grid .card__heading a,
-  .bk-collection-grid-{{ section.id }} .product-grid .full-unstyled-link {
-    color: rgb(95, 39, 44);
-    line-height: 1.24;
-  }
-
-  .bk-collection-grid-{{ section.id }} .product-grid .price-item,
-  .bk-collection-grid-{{ section.id }} .product-grid .price {
-    color: rgb(95, 39, 44);
-  }
-
-  .bk-collection-grid-{{ section.id }} .product-grid .quick-add__submit,
-  .bk-collection-grid-{{ section.id }} .product-grid .button {
-    border-radius: 999px;
-  }
-
-  .bk-collection-grid-{{ section.id }} .pagination-wrapper {
-    margin-top: 2rem;
-  }
-
   @media screen and (min-width: 750px) {
     .section-{{ section.id }}-padding {
       padding-top: {{ section.settings.padding_top }}px;
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
-
-  @media screen and (max-width: 749px) {
-    .bk-collection-grid-{{ section.id }} .facets-container {
-      padding: 1rem 1.1rem;
-      border-radius: 2rem;
-    }
-
-    .bk-collection-grid-{{ section.id }} .product-grid-container > .collection {
-      padding: 1rem;
-      border-radius: 2.2rem;
-    }
-
-    .bk-collection-grid-{{ section.id }} #product-grid {
-      gap: 1.2rem;
-    }
-
-    .bk-collection-grid-{{ section.id }} .product-grid .card {
-      border-radius: 2rem;
-    }
-
-    .bk-collection-grid-{{ section.id }} .product-grid .card__content {
-      padding: 0 1.2rem 1.3rem;
-    }
-  }
 {%- endstyle -%}
 
-<div class="section-{{ section.id }}-padding gradient color-{{ section.settings.color_scheme }} bk-collection-grid-{{ section.id }}">
+<div class="section-{{ section.id }}-padding gradient color-{{ section.settings.color_scheme }}">
   {%- paginate collection.products by section.settings.products_per_page -%}
     {% comment %} Sort is the first tabbable element when filter type is vertical {% endcomment %}
     {%- if section.settings.enable_sorting and section.settings.filter_type == 'vertical' -%}

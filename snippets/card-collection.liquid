@@ -8,6 +8,7 @@
   - extend_height: {Boolean} Card height extends to available container space. Default: false (optional)
   - wrapper_class: {String} Wrapper class for card (optional)
   - placeholder_image: {String} Placeholder image when collection is empty (optional)
+  - show_collection_count: {Boolean} Show collection product count beside the title (optional)
 
   Usage:
   {% render 'card-collection' %}
@@ -28,6 +29,11 @@
   if wrapper_class == null or wrapper_class == 'none'
     assign card_color_scheme = settings.collection_card_color_scheme
     assign card_style = settings.collection_card_style
+  endif
+
+  assign bk_collection_count = blank
+  if show_collection_count and card_collection != blank
+    assign bk_collection_count = card_collection.all_products_count
   endif
 -%}
 
@@ -93,7 +99,12 @@
                 class="full-unstyled-link"
               >
                 {%- if card_collection.title != blank -%}
-                  {{- card_collection.title | escape -}}
+                  <span class="bk-collection-card__title-group">
+                    <span>{{- card_collection.title | escape -}}</span>
+                    {%- if bk_collection_count != blank -%}
+                      <span class="bk-collection-card__count">({{ bk_collection_count }})</span>
+                    {%- endif -%}
+                  </span>
                 {%- else -%}
                   {{ 'onboarding.collection_title' | t }}
                 {%- endif -%}
@@ -125,7 +136,12 @@
               class="full-unstyled-link"
             >
               {%- if card_collection.title != blank -%}
-                {{- card_collection.title | escape -}}
+                <span class="bk-collection-card__title-group">
+                  <span>{{- card_collection.title | escape -}}</span>
+                  {%- if bk_collection_count != blank -%}
+                    <span class="bk-collection-card__count">({{ bk_collection_count }})</span>
+                  {%- endif -%}
+                </span>
               {%- else -%}
                 {{ 'onboarding.collection_title' | t }}
               {%- endif -%}
