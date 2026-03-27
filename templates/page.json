@@ -15,14 +15,13 @@
         "image": "shopify://shop_images/pexels-rahulp9800-2980255.jpg",
         "image_overlay_opacity": 0,
         "image_height": "adapt",
-        "desktop_content_position": "middle-center",
-        "show_text_box": true,
-        "desktop_content_alignment": "center",
-        "color_scheme": "",
         "image_behavior": "none",
+        "desktop_content_alignment": "center",
         "mobile_content_alignment": "center",
-        "stack_images_on_mobile": true,
-        "show_text_below": true
+        "color_scheme": "",
+        "show_text_below": true,
+        "show_text_box": true,
+        "stack_images_on_mobile": true
       }
     },
     "main": {
