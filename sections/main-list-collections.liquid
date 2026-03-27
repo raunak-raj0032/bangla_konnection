@@ -1,10 +1,100 @@
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
 {{ 'section-collection-list.css' | asset_url | stylesheet_tag }}
 
+{%- style -%}
+  .bk-list-collections-{{ section.id }} {
+    display: grid;
+    gap: 2rem;
+  }
+
+  .bk-list-collections__header-{{ section.id }} {
+    padding: clamp(1.8rem, 3vw, 2.8rem);
+    border: 0.1rem solid rgba(95, 39, 44, 0.1);
+    border-radius: 3rem;
+    background:
+      radial-gradient(circle at top right, rgba(227, 158, 96, 0.14), transparent 36%),
+      linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(242, 239, 221, 0.94));
+    box-shadow: 0 2rem 4.5rem rgba(95, 39, 44, 0.08);
+  }
+
+  .bk-list-collections__eyebrow-{{ section.id }} {
+    margin: 0 0 0.8rem;
+    color: rgba(95, 39, 44, 0.66);
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+  }
+
+  .bk-list-collections-{{ section.id }} .title {
+    margin: 0;
+    color: rgb(95, 39, 44);
+    line-height: 0.98;
+  }
+
+  .bk-list-collections-{{ section.id }} .collection-list {
+    gap: 1.8rem;
+  }
+
+  .bk-list-collections-{{ section.id }} .collection-card-wrapper .card {
+    overflow: hidden;
+    height: 100%;
+    border: 0.1rem solid rgba(95, 39, 44, 0.1);
+    border-radius: 2.5rem;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(248, 242, 232, 0.94));
+    box-shadow: 0 1.4rem 3rem rgba(95, 39, 44, 0.06);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .bk-list-collections-{{ section.id }} .collection-card-wrapper .card:hover {
+    transform: translateY(-0.25rem);
+    box-shadow: 0 2rem 4rem rgba(95, 39, 44, 0.1);
+  }
+
+  .bk-list-collections-{{ section.id }} .collection-card-wrapper .card__inner,
+  .bk-list-collections-{{ section.id }} .collection-card-wrapper .card__media,
+  .bk-list-collections-{{ section.id }} .collection-card-wrapper .media {
+    border-radius: 2rem 2rem 0 0;
+    overflow: hidden;
+  }
+
+  .bk-list-collections-{{ section.id }} .collection-card-wrapper .card__content {
+    padding: 0 1.5rem 1.6rem;
+  }
+
+  .bk-list-collections-{{ section.id }} .collection-card-wrapper .card__heading,
+  .bk-list-collections-{{ section.id }} .collection-card-wrapper .card__caption {
+    color: rgb(95, 39, 44);
+  }
+
+  @media screen and (max-width: 749px) {
+    .bk-list-collections__header-{{ section.id }} {
+      padding: 1.6rem;
+      border-radius: 2.3rem;
+    }
+
+    .bk-list-collections-{{ section.id }} .collection-list {
+      gap: 1.2rem;
+    }
+
+    .bk-list-collections-{{ section.id }} .collection-card-wrapper .card {
+      border-radius: 2rem;
+    }
+
+    .bk-list-collections-{{ section.id }} .collection-card-wrapper .card__content {
+      padding: 0 1.2rem 1.3rem;
+    }
+  }
+{%- endstyle -%}
+
 <div class="page-width">
-  <h1 class="title title--primary inline-richtext{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
-    {{ section.settings.title }}
-  </h1>
+  <div class="bk-list-collections-{{ section.id }}">
+    <div class="bk-list-collections__header-{{ section.id }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
+      <p class="bk-list-collections__eyebrow-{{ section.id }}">Bangla Konnection</p>
+      <h1 class="title title--primary inline-richtext">
+        {{ section.settings.title }}
+      </h1>
+    </div>
   {%- liquid
     case section.settings.sort
       when 'products_high', 'products_low'
@@ -46,6 +136,7 @@
     </ul>
     {% render 'pagination', paginate: paginate %}
   {%- endpaginate -%}
+  </div>
 </div>
 {% schema %}
 {

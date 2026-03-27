@@ -23,6 +23,7 @@
 {%- for value in option.values -%}
   {%- liquid
     assign swatch_focal_point = null
+    assign display_value = value | strip
     if value.swatch.image
       assign image_url = value.swatch.image | image_url: width: 50
       assign swatch_value = 'url(' | append: image_url | append: ')'
@@ -36,6 +37,59 @@
     assign option_disabled = true
     if value.available
       assign option_disabled = false
+    endif
+
+    if format_weight_units
+      assign normalized_value = value | downcase | strip | replace: ' ', ''
+
+      if normalized_value contains 'kilograms'
+        assign compact_unit_value = normalized_value | remove: 'kilograms'
+        if compact_unit_value != blank
+          assign display_value = compact_unit_value | append: ' kg'
+        endif
+      elsif normalized_value contains 'kilogram'
+        assign compact_unit_value = normalized_value | remove: 'kilogram'
+        if compact_unit_value != blank
+          assign display_value = compact_unit_value | append: ' kg'
+        endif
+      elsif normalized_value contains 'kgs'
+        assign compact_unit_value = normalized_value | remove: 'kgs'
+        if compact_unit_value != blank
+          assign display_value = compact_unit_value | append: ' kg'
+        endif
+      elsif normalized_value contains 'kg'
+        assign compact_unit_value = normalized_value | remove: 'kg'
+        assign compact_unit_probe = compact_unit_value | remove: '0' | remove: '1' | remove: '2' | remove: '3' | remove: '4' | remove: '5' | remove: '6' | remove: '7' | remove: '8' | remove: '9' | remove: '.'
+        if compact_unit_value != blank and compact_unit_probe == blank
+          assign display_value = compact_unit_value | append: ' kg'
+        endif
+      elsif normalized_value contains 'grams'
+        assign compact_unit_value = normalized_value | remove: 'grams'
+        if compact_unit_value != blank
+          assign display_value = compact_unit_value | append: ' g'
+        endif
+      elsif normalized_value contains 'gram'
+        assign compact_unit_value = normalized_value | remove: 'gram'
+        if compact_unit_value != blank
+          assign display_value = compact_unit_value | append: ' g'
+        endif
+      elsif normalized_value contains 'gms'
+        assign compact_unit_value = normalized_value | remove: 'gms'
+        if compact_unit_value != blank
+          assign display_value = compact_unit_value | append: ' g'
+        endif
+      elsif normalized_value contains 'gm'
+        assign compact_unit_value = normalized_value | remove: 'gm'
+        if compact_unit_value != blank
+          assign display_value = compact_unit_value | append: ' g'
+        endif
+      elsif normalized_value contains 'g'
+        assign compact_unit_value = normalized_value | remove: 'g'
+        assign compact_unit_probe = compact_unit_value | remove: '0' | remove: '1' | remove: '2' | remove: '3' | remove: '4' | remove: '5' | remove: '6' | remove: '7' | remove: '8' | remove: '9' | remove: '.'
+        if compact_unit_value != blank and compact_unit_probe == blank
+          assign display_value = compact_unit_value | append: ' g'
+        endif
+      endif
     endif
   -%}
 
@@ -60,7 +114,7 @@
 
   {%- if picker_type == 'swatch' -%}
     {%- capture help_text -%}
-      <span class="visually-hidden">{{ value | escape }}</span>
+      <span class="visually-hidden">{{ display_value | escape }}</span>
       {{ label_unavailable }}
     {%- endcapture -%}
     {%
@@ -92,7 +146,7 @@
       {{ input_dataset }}
     >
     <label for="{{ input_id }}">
-      {{ value -}}
+      {{ display_value -}}
       {{ label_unavailable }}
     </label>
   {%- elsif picker_type == 'dropdown' or picker_type == 'swatch_dropdown' -%}
@@ -111,9 +165,9 @@
       {{ input_dataset }}
     >
       {% if option_disabled -%}
-        {{- 'products.product.value_unavailable' | t: option_value: value -}}
+        {{- 'products.product.value_unavailable' | t: option_value: display_value -}}
       {%- else -%}
-        {{- value -}}
+        {{- display_value -}}
       {%- endif %}
     </option>
   {%- endif -%}
