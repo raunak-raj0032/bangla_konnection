@@ -1,285 +1,260 @@
-{% comment %} <style>
-    @media only screen and (min-width: 750px) 
-{ 
-/* .js-recentPdpBlock{
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  column-gap: var(--grid-desktop-horizontal-spacing);
-
-} */
-  .js-recentPdpBlock {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  column-gap: var(--grid-desktop-horizontal-spacing);
-}
-
-
-}
-
-@media only screen and (max-width: 576px)
-{
-    /* Code by https://websensepro.com */
-  .js-recentPdpBlock{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  column-gap: var(--grid-desktop-horizontal-spacing);
-
-}
-  .c-product img{
-height: 230px !important;
-  }
-}
-
-.recently-title h2 {
-    font-size: 24px;
-    border-top: 1px solid #d2d2d2;
-    padding-top: 50px;
-}
-/* .js-recentPdpBlock {
-    display: flex;
-    flex-wrap: wrap !important;
-} */
-
-.c-product{
-  cursor: pointer;
-}
-
-.c-product img {
-  height: 320px;
-  width: 100%;
-  object-fit: cover;
-    border-radius: 15px !important;
-
-}
-
-.c-product p.c-productPrice {
-    line-height: 0px;
-  color: #000;
-}
-
-.c-product h3.c-product__title {
-    line-height: 0px;
-    padding-bottom: 10px;
-}
-
-.c-product h3.c-product__title a {
-    color: black;
-  text-decoration: none;
-}
- a.c-product__url{
-    position: relative;
-  }
-</style> {% endcomment %}
-
 <style>
+  .bk-recently-viewed {
+    margin-top: clamp(4rem, 7vw, 7rem);
+    padding-top: clamp(3rem, 5vw, 4.8rem);
+    border-top: 0.1rem solid rgba(90, 27, 40, 0.12);
+  }
 
-/* Default styles for desktop */
-.js-recentPdpBlock {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  column-gap: var(--grid-desktop-horizontal-spacing);
-}
+  .bk-recently-viewed[hidden] {
+    display: none !important;
+  }
 
-.c-product {
-  cursor: pointer;
-}
+  .bk-recently-viewed__title {
+    margin: 0 0 2rem;
+    color: #5a1b28;
+    font-size: clamp(3rem, 4vw, 4.2rem);
+    line-height: 1;
+    letter-spacing: -0.03em;
+  }
 
-.c-product img {
-  height: 320px;
-  width: 100%;
-  object-fit: cover;
-  border-radius: 15px !important;
-}
-
-.c-product p.c-productPrice {
-  line-height: 1;
-  color: #000;
-}
-
-.c-product h3.c-product__title {
-  line-height: 1.2;
-  padding-bottom: 10px;
-}
-
-.c-product h3.c-product__title a {
-  color: black;
-  text-decoration: none;
-}
-
-a.c-product__url {
-  position: relative;
-}
-
-.recently-title h2 {
-  font-size: 24px;
-  border-top: 1px solid #d2d2d2;
-  padding-top: 50px;
-}
-
-/* Tablet (min-width: 576px and max-width: 749px) */
-@media only screen and (max-width: 749px) and (min-width: 576px) {
-  .js-recentPdpBlock {
+  .bk-recently-viewed__grid {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    column-gap: var(--grid-desktop-horizontal-spacing);
+    grid-template-columns: repeat(auto-fit, minmax(min(22rem, 100%), 26rem));
+    gap: 2rem;
+    align-items: start;
+    justify-content: start;
   }
 
-  .c-product img {
-    height: 280px !important;
+  .bk-recently-viewed__item {
+    min-width: 0;
   }
 
-  .recently-title h2 {
-    font-size: 22px;
-    padding-top: 40px;
+  .bk-recently-viewed__card {
+    height: 100%;
+    padding: 1rem;
+    border: 0.1rem solid rgba(90, 27, 40, 0.12);
+    border-radius: 2.4rem;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(255, 246, 237, 0.92));
+    box-shadow: 0 1.8rem 3.6rem rgba(95, 39, 44, 0.08);
   }
-}
 
-/* Phone (max-width: 576px) */
-@media only screen and (max-width: 576px) {
-  .js-recentPdpBlock {
+  .bk-recently-viewed__media {
+    display: block;
+    aspect-ratio: 4 / 5;
+    border-radius: 1.8rem;
+    overflow: hidden;
+    background: linear-gradient(180deg, rgba(244, 231, 214, 0.95), rgba(230, 206, 177, 0.9));
+  }
+
+  .bk-recently-viewed__media img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .bk-recently-viewed__card:hover .bk-recently-viewed__media img {
+    transform: scale(1.03);
+  }
+
+  .bk-recently-viewed__body {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: var(--grid-desktop-horizontal-spacing);
-    gap:20px
+    gap: 0.8rem;
+    padding: 1.4rem 0.4rem 0.2rem;
   }
 
-  .c-product img {
-    height: 170px !important;
-    width: 150px !importan
+  .bk-recently-viewed__eyebrow {
+    margin: 0;
+    color: rgba(90, 27, 40, 0.58);
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
   }
 
-  .recently-title h2 {
-    font-size: 20px;
-    padding-top: 30px;
-    line-height:20px
+  .bk-recently-viewed__product-title {
+    margin: 0;
+    font-size: 2rem;
+    line-height: 1.2;
   }
 
-  .c-product h3.c-product__title {
-    font-size: 16px;
-    line-height:20px;
-    white-space:normal;
+  .bk-recently-viewed__product-title a {
+    color: #3f1520;
+    text-decoration: none;
   }
 
-  .c-product p.c-productPrice {
-    font-size: 14px;
+  .bk-recently-viewed__price {
+    margin: 0;
+    color: #5a1b28;
+    font-size: 1.9rem;
+    font-weight: 700;
+    line-height: 1.1;
   }
-}
-  </style>
+
+  @media only screen and (max-width: 989px) {
+    .bk-recently-viewed__grid {
+      grid-template-columns: repeat(auto-fit, minmax(min(19rem, 100%), 1fr));
+    }
+  }
+
+  @media only screen and (max-width: 749px) {
+    .bk-recently-viewed__grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.4rem;
+    }
+
+    .bk-recently-viewed__title {
+      margin-bottom: 1.6rem;
+      font-size: 2.6rem;
+    }
+
+    .bk-recently-viewed__card {
+      padding: 0.8rem;
+      border-radius: 1.8rem;
+    }
+
+    .bk-recently-viewed__media {
+      border-radius: 1.4rem;
+    }
+
+    .bk-recently-viewed__body {
+      gap: 0.7rem;
+      padding: 1.1rem 0.2rem 0.1rem;
+    }
+
+    .bk-recently-viewed__product-title {
+      font-size: 1.6rem;
+    }
+
+    .bk-recently-viewed__price {
+      font-size: 1.6rem;
+    }
+  }
+</style>
 
 <script>
+  (function () {
+    const storageKey = 'recently_viewed';
+    const maxProducts = 4;
 
-    // First Block
-        function setRecentlyViewedPdp() {
-            const pdpData = {
-                productTitle : "{{ product.title }}",
-                productImg : "{{ product.featured_image | img_url: '' }}",
-                productPrice : "Rs.{{ product.price | money | remove_first: '' }}",
-                productUrl : "{{ product.url }}"
-            };
-    
-            // Init Empty Array to push data
-            const productArr = [];
-            // Create a couple of variables 
-            let jsonResp,
-                jsonRespArr, 
-                jsonRespArrStr; 
-            // Set the number how many products you want to capture 
-            const numberOfProduct = 4;
-            // Now push the pdpData into Array so that we can use it 
-            productArr.push(pdpData);
-            // Get the product title from pdpData 
-            const currPdpTitle = pdpData.productTitle;
-            // Now Convert current page data into Strings which we already pushed in Array 
-            const pdpDataString = JSON.stringify(productArr);
-            // Set the variable for localStorage 
-            const localData = localStorage.getItem('recently_viewed');
-          
-            // Second Block
-            // first we need to check data if data is not there then store right // away 
-            if (localData == null) {
-                localStorage.setItem('recently_viewed', pdpDataString);
-                
-            }
-            // If data is there then we need to check couple of other conditions 
-            else if ( localData != null ) {
-                
-                // Create Variable for oldData or Previous page 
-                const oldPdpData = localStorage.getItem('recently_viewed');
-                // Count the amount of data stored in strings so that we can remove // old products from the stack 
-                const countPdpData = (oldPdpData.match(/productTitle/g) || []).length;
-                // we also need to check if user is not visiting page again 
-                const reVisitPdp =  oldPdpData.includes(currPdpTitle);
-                // Get old data, merged it with new data and store merged data
-                if (countPdpData < numberOfProduct && reVisitPdp == false) {
-                    jsonResp = JSON.parse(oldPdpData);
-                    jsonRespArr = jsonResp.concat(productArr);
-                    jsonRespArrStr = JSON.stringify(jsonRespArr);
-                    localStorage.setItem('recently_viewed', jsonRespArrStr);
-                }
-                // If User visited more the 4 pages delete first page data 
-                else if (countPdpData >= numberOfProduct && reVisitPdp == false) {
-                    jsonResp = JSON.parse(oldPdpData);
-                    jsonResp.shift();
-                    jsonRespArr = jsonResp.concat(productArr);
-                    jsonRespArr =  JSON.stringify(jsonRespArr);
-                    localStorage.setItem('recently_viewed', jsonRespArr);
-                }
-            }
-        }
-        
-        // Now we write all our function and it's time to execute it 
-        setRecentlyViewedPdp();
-        // Set Variable for Local Storage Data 
-        const localViewed = localStorage.recently_viewed;
-        // console.log to verify the data 
-    </script>
-             <div class="recently-title">
-                      <h2 class="title inline-richtext h2 scroll-trigger animate--slide-in"><b>Recently Viewed</b></h2>
-                    </div>
-    <div class="js-recentPdpBlock">
-    </div>
-    <script>
-        // Third Block
-        function getRecentPdp (){
-    
-            // First let's convert localStorage data into object again
-            const pdpData = JSON.parse(localStorage.getItem('recently_viewed'));
-            console.log(pdpData)
-            // Create a empty Array
-            const recentViewHtml = []
-            // Loop through all the data and inject into HTML using ES6
-            pdpData.forEach(function(item){ 
-                recentViewHtml.push(`
-                    <section id="Recent">
-                    <div class="c-product">
-                        <div class="c-product__img">
-                        <a href="${item.productUrl}"><img src='${item.productImg}'/></a>
-                        </div>
-                        <h3 class="c-product__title">
-                            <a class="c-product__url" href="${item.productUrl}">
-                            ${item.productTitle}
-                            </a>
-                        </h3>
-                        <p class="c-productPrice">${item.productPrice}</p>
-                    </div>
-                    
-                    
-                    </section>
-                `)
-            })
-            // Now consolidate the data 
-            const recentBlock = `${recentViewHtml.join('')}`
-            // console.log() to check data is correct 
-            console.log(recentBlock);
-            // Inject into PDP page
-            const contentBlock = document.querySelectorAll('.js-recentPdpBlock');
-            // Push the data
-            contentBlock.forEach(element =>{
-                element.innerHTML = recentBlock;
-            })
-           
-        }
-        // Execute this function on DOM content load 
-    
-        getRecentPdp();
-        </script>
+    const currentProduct = {
+      productTitle: {{ product.title | json }},
+      productImg: {{ product.featured_image | image_url: width: 900 | json }},
+      productPrice: {{ product.price | money | json }},
+      productUrl: {{ product.url | json }}
+    };
+
+    let storedProducts = [];
+
+    try {
+      storedProducts = JSON.parse(localStorage.getItem(storageKey)) || [];
+    } catch (error) {
+      storedProducts = [];
+    }
+
+    if (!Array.isArray(storedProducts)) {
+      storedProducts = [];
+    }
+
+    storedProducts = storedProducts.filter(function (item) {
+      return item && item.productUrl !== currentProduct.productUrl;
+    });
+
+    storedProducts.push(currentProduct);
+
+    if (storedProducts.length > maxProducts) {
+      storedProducts = storedProducts.slice(storedProducts.length - maxProducts);
+    }
+
+    localStorage.setItem(storageKey, JSON.stringify(storedProducts));
+  })();
+</script>
+
+<div class="bk-recently-viewed" data-recently-viewed-root hidden>
+  <h2 class="bk-recently-viewed__title title inline-richtext h2 scroll-trigger animate--slide-in">
+    Recently Viewed
+  </h2>
+  <div class="bk-recently-viewed__grid js-recentPdpBlock"></div>
+</div>
+
+<script>
+  (function () {
+    const storageKey = 'recently_viewed';
+    const currentProductUrl = {{ product.url | json }};
+    const root = document.querySelector('[data-recently-viewed-root]');
+
+    function escapeHtml(value) {
+      return String(value)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+    }
+
+    if (!root) {
+      return;
+    }
+
+    const contentBlock = root.querySelector('.js-recentPdpBlock');
+
+    if (!contentBlock) {
+      return;
+    }
+
+    let storedProducts = [];
+
+    try {
+      storedProducts = JSON.parse(localStorage.getItem(storageKey)) || [];
+    } catch (error) {
+      storedProducts = [];
+    }
+
+    if (!Array.isArray(storedProducts)) {
+      storedProducts = [];
+    }
+
+    const recentProducts = storedProducts
+      .filter(function (item) {
+        return item && item.productUrl && item.productUrl !== currentProductUrl;
+      })
+      .reverse();
+
+    if (!recentProducts.length) {
+      root.hidden = true;
+      return;
+    }
+
+    const recentViewHtml = recentProducts
+      .map(function (item) {
+        const safeTitle = escapeHtml(item.productTitle || '');
+        const safeUrl = escapeHtml(item.productUrl || '');
+        const safePrice = escapeHtml(item.productPrice || '');
+        const imageMarkup = item.productImg
+          ? "<img src=\"" + item.productImg + "\" alt=\"" + safeTitle + "\" loading=\"lazy\">"
+          : '';
+
+        return (
+          "<article class=\"bk-recently-viewed__item\">" +
+            "<div class=\"bk-recently-viewed__card\">" +
+              "<a class=\"bk-recently-viewed__media\" href=\"" + safeUrl + "\">" +
+                imageMarkup +
+              "</a>" +
+              "<div class=\"bk-recently-viewed__body\">" +
+                "<p class=\"bk-recently-viewed__eyebrow\">Recently viewed</p>" +
+                "<h3 class=\"bk-recently-viewed__product-title\">" +
+                  "<a class=\"c-product__url\" href=\"" + safeUrl + "\">" + safeTitle + "</a>" +
+                "</h3>" +
+                "<p class=\"bk-recently-viewed__price\">" + safePrice + "</p>" +
+              "</div>" +
+            "</div>" +
+          "</article>"
+        );
+      })
+      .join('');
+
+    contentBlock.innerHTML = recentViewHtml;
+    root.hidden = false;
+  })();
+</script>
